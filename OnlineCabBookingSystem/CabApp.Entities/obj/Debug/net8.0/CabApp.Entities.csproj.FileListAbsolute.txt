@@ -1,0 +1,11 @@
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\bin\Debug\net8.0\CabApp.Entities.deps.json
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\bin\Debug\net8.0\CabApp.Entities.dll
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\bin\Debug\net8.0\CabApp.Entities.pdb
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\obj\Debug\net8.0\CabApp.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\obj\Debug\net8.0\CabApp.Entities.AssemblyInfoInputs.cache
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\obj\Debug\net8.0\CabApp.Entities.AssemblyInfo.cs
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\obj\Debug\net8.0\CabApp.Entities.csproj.CoreCompileInputs.cache
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\obj\Debug\net8.0\CabApp.Entities.dll
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\obj\Debug\net8.0\refint\CabApp.Entities.dll
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\obj\Debug\net8.0\CabApp.Entities.pdb
+C:\Users\SKUMA151\Desktop\Splint Project\OnlineCabBookingSystem\CabApp.Entities\obj\Debug\net8.0\ref\CabApp.Entities.dll

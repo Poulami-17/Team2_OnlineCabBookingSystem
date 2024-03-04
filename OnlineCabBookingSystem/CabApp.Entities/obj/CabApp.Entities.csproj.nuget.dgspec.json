@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SKUMA151\\Desktop\\Sprint Project\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj": {}
+    "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SKUMA151\\Desktop\\Sprint Project\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj": {
+    "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SKUMA151\\Desktop\\Sprint Project\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj",
         "projectName": "CabApp.Entities",
-        "projectPath": "C:\\Users\\SKUMA151\\Desktop\\Sprint Project\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj",
-        "packagesPath": "C:\\Users\\SKUMA151\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SKUMA151\\Desktop\\Sprint Project\\OnlineCabBookingSystem\\CabApp.Entities\\obj\\",
+        "projectPath": "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj",
+        "packagesPath": "C:\\Users\\SNEDEB\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\SKUMA151\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SNEDEB\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

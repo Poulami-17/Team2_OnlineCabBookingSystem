@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CabApp.Services.Driver
+namespace CabApp.Services
 {
     public interface IDriverRideService
     {

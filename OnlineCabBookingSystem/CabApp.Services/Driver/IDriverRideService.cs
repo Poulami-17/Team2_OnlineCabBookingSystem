@@ -10,6 +10,10 @@ namespace CabApp.Services
     public interface IDriverRideService
     {
         public Task<List<Ride>> GetPendingRide();
+
+        public Task<Ride> AcceptRide(int id);
+
+        public Task<Payment> RideComplete(int id);
         
        
     }

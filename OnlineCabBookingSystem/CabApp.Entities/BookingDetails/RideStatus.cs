@@ -8,6 +8,7 @@ namespace CabApp.Entities
 {
     public enum RideStatus
     {
+        Pending = -1,
         Accepted = 0,
         Started = 1,
         Ongoing = 2,

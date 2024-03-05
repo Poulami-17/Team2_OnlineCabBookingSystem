@@ -22,7 +22,6 @@ namespace CabApp.Entities
         [Required]
         public bool IsCompleted { get; set; }
 
-        [Required]
-        public Ride Ride { get; set; }
+       
     }
 }

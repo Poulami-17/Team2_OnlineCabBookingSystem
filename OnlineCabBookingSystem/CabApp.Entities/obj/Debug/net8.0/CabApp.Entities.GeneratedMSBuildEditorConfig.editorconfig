@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CabApp.Entities
-build_property.ProjectDir = C:\Project2\Team2_OnlineCabBookingSystem\OnlineCabBookingSystem\CabApp.Entities\
+build_property.ProjectDir = C:\Users\MEGHANH\OneDrive - Capgemini\Documents\CabApp Project\Team2_OnlineCabBookingSystem\OnlineCabBookingSystem\CabApp.Entities\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

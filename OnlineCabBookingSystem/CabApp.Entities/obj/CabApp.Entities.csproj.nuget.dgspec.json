@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj": {}
+    "C:\\Project2\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj": {
+    "C:\\Project2\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj",
+        "projectUniqueName": "C:\\Project2\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj",
         "projectName": "CabApp.Entities",
-        "projectPath": "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj",
-        "packagesPath": "C:\\Users\\SNEDEB\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SNEDEB\\Documents\\Module1\\SprintProjct\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\obj\\",
+        "projectPath": "C:\\Project2\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\CabApp.Entities.csproj",
+        "packagesPath": "C:\\Users\\ymvarshi\\.nuget\\packages\\",
+        "outputPath": "C:\\Project2\\Team2_OnlineCabBookingSystem\\OnlineCabBookingSystem\\CabApp.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\SNEDEB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ymvarshi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

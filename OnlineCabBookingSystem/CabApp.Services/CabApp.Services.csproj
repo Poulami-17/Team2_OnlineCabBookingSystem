@@ -9,7 +9,12 @@
   <ItemGroup>
     <Folder Include="Admin\" />
     <Folder Include="Customer\" />
-    <Folder Include="Driver\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CabApp.API\CabApp.API.csproj" />
+    <ProjectReference Include="..\CabApp.Data\CabApp.Data.csproj" />
+    <ProjectReference Include="..\CabApp.Entities\CabApp.Entities.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,7 +11,9 @@ namespace CabApp.Services
     public class CustomerBookingService:ICustomerBookingService
     {
         private readonly CabAppDbContext context;
+
         private readonly List<Ride> _bookings = new List<Ride>();
+
         private readonly List<Driver> _drivers = new List<Driver>();
 
 

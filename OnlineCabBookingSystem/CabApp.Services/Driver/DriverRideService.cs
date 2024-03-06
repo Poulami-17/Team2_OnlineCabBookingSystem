@@ -15,6 +15,7 @@ namespace CabApp.Services
         //object of db context class
         private readonly CabAppDbContext context;
 
+
         //constructor Dependency injection
         public DriverRideService(CabAppDbContext context)
         {
@@ -22,27 +23,40 @@ namespace CabApp.Services
         }
 
 
-        public async Task<Ride> AcceptRide(int id)
-        {
-            //driverstatus ??
-            return await context.Rides.Where(x => x.ID == id).SingleAsync();
-        }
-
+        //driver will able to see the rides available
         public async Task<List<Ride>> GetPendingRide()
         {
             return await context.Rides.Where(x => x.RideStatus == RideStatus.Pending).ToListAsync();
         }
 
 
-        //to be ask from sir?
+        //When driver accept the ride ,it will send back ride id and will get that ride details
+        public async Task<Ride> AcceptRide(int id)
+        {
+            var acceptedRide = await context.Rides.Where(x => x.ID == id).SingleAsync();
+
+            acceptedRide.Driver.AvailabilityStatus = false;
+
+            context.Rides.Update(acceptedRide);
+            await context.SaveChangesAsync();
+
+            return await context.Rides.Where(x => x.ID == id).SingleAsync();
+        }
+
+        
+
+
+        //When driver click on complete ride button,then ride status will change and he will able to see the payment details
+       
         public async Task<Payment> RideComplete(int id)
         {
             var currentRide = await context.Rides.Where(x => x.ID == id).SingleAsync();
-             
-            //var driverStatus ??
+
+            currentRide.Driver.AvailabilityStatus = true;
 
             currentRide.RideStatus = RideStatus.Completed;
 
+            context.Rides.Update(currentRide);
             await context.SaveChangesAsync();
 
             return await context.Payments.Where(x=>x.ID == id).SingleAsync();

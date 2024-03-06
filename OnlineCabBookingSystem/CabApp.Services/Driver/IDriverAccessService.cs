@@ -10,10 +10,7 @@ namespace CabApp.Services
 {
     public interface IDriverAccessService
     {
-        //method which is responsible for taking signup details and saving it in the database
         Driver DriverSignUp(DriverSignUpRequest request);
-
-        //method which is responsible for checking credentials given by driver from the database and  give login permission
         List<Claim> DriverSignIn(DriverSignInRequest request);
     }
 }

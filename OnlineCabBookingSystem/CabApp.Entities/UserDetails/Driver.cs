@@ -28,6 +28,9 @@ namespace CabApp.Entities
         [Required]
         public bool AvailabilityStatus { get; set; }
 
+        [Required]
+        public Vehicle Vehicle { get; set; }
+
       
 
     }

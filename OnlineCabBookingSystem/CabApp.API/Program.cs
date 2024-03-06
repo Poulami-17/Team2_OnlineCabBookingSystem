@@ -1,5 +1,6 @@
 
 using CabApp.Data;
+using CabApp.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace CabApp.API
@@ -15,10 +16,14 @@ namespace CabApp.API
 
             builder.Services.AddControllers();
 
+            //Dependency Registion for DbContext Class
             builder.Services.AddDbContext<CabAppDbContext>
             (options => options.UseSqlServer
             (builder.Configuration.GetConnectionString("Constr")));
 
+            //registering dependency for DriverAccessService interface and class
+            builder.Services.AddScoped<IDriverAccessService, DriverAccessService>();
+            
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

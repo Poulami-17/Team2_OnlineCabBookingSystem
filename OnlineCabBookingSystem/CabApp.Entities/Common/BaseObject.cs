@@ -16,7 +16,7 @@ namespace CabApp.Entities
 
         public DateTime Update { get; set; }
 
-        public DateTime Delete { get; set; }
+        public DateTime DeleteDate { get; set; }
 
     }
 }

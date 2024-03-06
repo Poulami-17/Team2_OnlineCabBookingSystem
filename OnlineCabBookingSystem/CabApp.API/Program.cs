@@ -18,6 +18,10 @@ namespace CabApp.API
             (options => options.UseSqlServer
             (builder.Configuration.GetConnectionString("Constr")));
 
+
+            //Registering Dependency for DriverAccessService interface and class
+            builder.Services.AddScoped<IAdminAccessService, AdminAccessService>();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

@@ -15,8 +15,6 @@ namespace CabApp.Services
 
         public Task<Payment> RideComplete(int id);
         
-       //cancel ride
-       //view customer
        
     }
 }

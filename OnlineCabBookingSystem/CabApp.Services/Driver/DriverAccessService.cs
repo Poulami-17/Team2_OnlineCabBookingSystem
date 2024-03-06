@@ -21,6 +21,10 @@ namespace CabApp.Services
         {
             this.context = context;
         }
+
+
+
+        //when driver try to sign in ,if successfull it wil return list of claims otherwise exception
         public List<Claim> DriverSignIn(DriverSignInRequest request)
         {
             var driver = context.Drivers.FirstOrDefault(d => d.Email == request.Email
@@ -37,6 +41,8 @@ namespace CabApp.Services
             return result;
         }
 
+
+        //when driver try to sign up ,it will check if he/she is already in the database or not,otherwise ,his details go for registration.
         public Driver DriverSignUp(DriverSignUpRequest request)
         {
             //Check if the email is already in use

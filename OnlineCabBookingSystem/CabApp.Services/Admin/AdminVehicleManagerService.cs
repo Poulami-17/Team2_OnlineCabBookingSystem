@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CabApp.Services.Admin
+namespace CabApp.Services
 {
     internal class AdminVehicleManagerService : IAdminVehicleManager
     {

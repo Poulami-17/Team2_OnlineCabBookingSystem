@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CabApp.Data;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +10,27 @@ namespace CabApp.Services
 {
     public class CustomerPaymentService : ICustomerPaymentService
     {
-        public async Task<bool> ProcessPayment(string customerId, decimal amount)
-        {
+        private readonly CabAppDbContext context;
 
-            return await Task.FromResult(true);
+        public CustomerPaymentService(CabAppDbContext context)
+        {
+            this.context = context;
         }
-       
+
+        public async Task<bool> ProcessPayment(int RideId, decimal amount)
+        {
+            var payment = await context.Payments.FirstOrDefaultAsync(x => x.ID == RideId);
+
+            if (payment != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
+
 }

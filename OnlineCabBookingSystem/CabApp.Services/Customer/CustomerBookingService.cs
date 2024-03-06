@@ -5,16 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using CabApp.Data;
 using CabApp.Entities;
+using CabApp.Services.Customer;
+using Microsoft.EntityFrameworkCore;
 
 namespace CabApp.Services
 {
-    public class CustomerBookingService:ICustomerBookingService
+    public class CustomerBookingService : ICustomerBookingService
     {
         private readonly CabAppDbContext context;
-
-        private readonly List<Ride> _bookings = new List<Ride>();
-
-        private readonly List<Driver> _drivers = new List<Driver>();
+        //   private int customerId;
 
 
         //constructor Dependency injection
@@ -25,29 +24,65 @@ namespace CabApp.Services
 
 
 
-        public async Task<Ride> BookCab(int customerId, Ride booking)
+        public async Task<Ride> BookCab(RideRequest request)
         {
-            booking.ID = customerId;
-            _bookings.Add(booking);
+            if (context.Rides.Any(d => d.Customer.ID == request.CustomerId && d.RideStatus != RideStatus.Completed))
+                throw new CustomerRideOnGoingException("Customer already has a ongoing ride");
 
-            return await Task.FromResult(booking);
+            var customer = context.Customers.Find(request.CustomerId);
+            var category = context.VehicleCategories.Find(request.CategoryId);
+
+            //pending and accepted condition
+            Ride r = new Ride();
+            r.RideStatus = RideStatus.Pending;
+            r.Customer = customer;
+
+
+
+            context.Rides.Add(r);
+            await context.SaveChangesAsync();
+
+            return r;
+        }
+        public async Task<bool> AcceptBooking(int bookingId, int RideId)
+        {
+            // var booking = context.Rides.FindAsync(bookingId);
+
+            var booking = context.Rides.FirstOrDefault(b => b.ID == bookingId && b.ID == RideId);
+            if (booking != null && booking.RideStatus == RideStatus.Pending)
+
+            {
+                booking.RideStatus = RideStatus.Accepted;
+                context.Rides.Update(booking);
+
+                await context.SaveChangesAsync();
+
+                return true;
+            }
+            return false;
         }
 
-        public async Task<Driver> GetDriverDetails(int driverId)
+
+        public async Task<Ride> GetRiderDetails(int riderId)
         {
-            return await Task.FromResult(_drivers.FirstOrDefault(d => d.ID == driverId));
+            var ride = await context.Rides.Include(d => d.Driver).FirstOrDefaultAsync(d => d.ID == riderId);
+            return ride;
         }
 
 
         public async Task<bool> CancelBooking(int customerId, int bookingId)
         {
-            var booking = _bookings.FirstOrDefault(b => b.ID == bookingId && b.ID == customerId);
+            var booking = context.Rides.FirstOrDefault(b => b.ID == bookingId && b.ID == customerId);
             if (booking != null)
             {
-                _bookings.Remove(booking);
-                return await Task.FromResult(true);
+                booking.RideStatus = RideStatus.Cancelled;
+                context.Rides.Update(booking);
+
+                await context.SaveChangesAsync();
+
+                return true;
             }
-            return await Task.FromResult(false);
+            return false;
         }
     }
 }

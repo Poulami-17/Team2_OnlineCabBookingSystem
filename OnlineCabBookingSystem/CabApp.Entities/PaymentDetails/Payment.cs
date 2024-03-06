@@ -21,7 +21,6 @@ namespace CabApp.Entities
 
         [Required]
         public bool IsCompleted { get; set; }
-
-       
+        public string CustomerId { get; set; }
     }
 }

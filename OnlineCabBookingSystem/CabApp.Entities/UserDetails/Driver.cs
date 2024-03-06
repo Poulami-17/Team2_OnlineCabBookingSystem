@@ -28,6 +28,8 @@ namespace CabApp.Entities
         [Required]
         public bool AvailabilityStatus { get; set; }
 
+
+
       
 
     }

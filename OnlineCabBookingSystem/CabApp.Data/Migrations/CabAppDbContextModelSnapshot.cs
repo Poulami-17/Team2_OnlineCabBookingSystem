@@ -187,6 +187,10 @@ namespace CabApp.Data.Migrations
                     b.Property<DateTime>("Create")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("CustomerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("Delete")
                         .HasColumnType("datetime2");
 

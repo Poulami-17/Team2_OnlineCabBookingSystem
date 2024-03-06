@@ -19,10 +19,11 @@ namespace CabApp.Services
             this._dbContext = _dbContext;
         }
 
+        //method which is responsible for taking signup details and saving it in the database
         public List<Claim> AdminSignIn(DriverSignInRequest request)
         {
-           var admin = _dbContext.Admins.FirstOrDefault(d=>d.Email== request.Email && d.Password == request.Password);
-            if(admin == null)
+            var admin = _dbContext.Admins.FirstOrDefault(d => d.Email == request.Email && d.Password == request.Password);
+            if (admin == null)
             {
                 throw new AuthenticationException("Login Failed");
             }
@@ -33,6 +34,8 @@ namespace CabApp.Services
             };
             return result;
         }
+
+        //method which is responsible for checking credentials given by admin from the database and  give login permission
 
         public Admin AdminSignUp(AdminSignUpRequest request)
         {
@@ -45,48 +48,15 @@ namespace CabApp.Services
             admin.Password = request.Password;
             admin.PhoneNumber = 0;
             admin.UserName = request.UserName;
-            
-            
-            
+
+
+
 
             _dbContext.Admins.Add(admin);
             _dbContext.SaveChanges();
 
             return admin;
         }
-
-
-
-        //View Customer
-        public async Task<List<Customer>> ViewAllCustomerAsync()
-        {
-            return await _dbContext.Customers.ToListAsync();
-
-        }
-
-
-        //Add Driver
-        public async Task AddDriversAsync(Driver driver)
-        {
-            await _dbContext.Set<Driver>().AddAsync(driver);
-            await _dbContext.SaveChangesAsync();
-        }
-
-
-        //View All Driver
-        public async Task<List<Driver>> ViewAllDriverAsync()
-        {
-            return await _dbContext.Drivers.ToListAsync();
-
-        }
-
-        //public async Task<Driver> ViewDriverByIdAsync(int  id)
-        //{
-        //    return await _dbContext.Drivers.FindAsync(id);
-        //}
-
-        //public async Task<>
-
 
 
     }

@@ -20,16 +20,17 @@ namespace CabApp.API.Controllers
         [HttpPost]
         public IActionResult Post(DriverSignInRequest request)
         {
-            try
+            var claims = driverAccessService.DriverSignIn(request);
+
+            if (claims != null)
             {
-                var claims = this.driverAccessService.DriverSignIn(request);
-                //jwt
-                return Ok();
+                //create and send back jwt token 
+                string jwtToken = JwtTokenGenerator.GenerateToken(claims);
+                return Ok(new { Token = jwtToken });
             }
-            catch (Exception ex)
-            {
-                return Unauthorized();
-            }
+
+
+            return Unauthorized();
         }
     }
 }

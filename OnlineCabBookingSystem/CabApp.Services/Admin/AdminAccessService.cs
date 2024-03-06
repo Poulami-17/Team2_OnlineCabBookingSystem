@@ -19,22 +19,7 @@ namespace CabApp.Services
             this._dbContext = _dbContext;
         }
 
-        //method which is responsible for taking signup details and saving it in the database
-        public List<Claim> AdminSignIn(DriverSignInRequest request)
-        {
-            var admin = _dbContext.Admins.FirstOrDefault(d => d.Email == request.Email && d.Password == request.Password);
-            if (admin == null)
-            {
-                throw new AuthenticationException("Login Failed");
-            }
-            var result = new List<Claim>
-            {
-                new Claim("Email",admin.Email),
-                new Claim(ClaimTypes.NameIdentifier,admin.Name),
-            };
-            return result;
-        }
-
+        
         //method which is responsible for checking credentials given by admin from the database and  give login permission
 
         public Admin AdminSignUp(AdminSignUpRequest request)
@@ -57,6 +42,23 @@ namespace CabApp.Services
 
             return admin;
         }
+
+        //method which is responsible for taking signup details and saving it in the database
+        public List<Claim> AdminSignIn(AdminSignInRequest request)
+        {
+            var admin = _dbContext.Admins.FirstOrDefault(d => d.Email == request.Email && d.Password == request.Password);
+            if (admin == null)
+            {
+                throw new AuthenticationException("Login Failed");
+            }
+            var result = new List<Claim>
+            {
+                new Claim("Email",admin.Email),
+                new Claim(ClaimTypes.NameIdentifier,admin.Name),
+            };
+            return result;
+        }
+
 
 
     }

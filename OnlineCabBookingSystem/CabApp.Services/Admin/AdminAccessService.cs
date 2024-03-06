@@ -20,7 +20,7 @@ namespace CabApp.Services
         }
 
         //method which is responsible for taking signup details and saving it in the database
-        public List<Claim> AdminSignIn(DriverSignInRequest request)
+        public List<Claim> AdminSignIn(AdminSignInRequest request)
         {
             var admin = _dbContext.Admins.FirstOrDefault(d => d.Email == request.Email && d.Password == request.Password);
             if (admin == null)

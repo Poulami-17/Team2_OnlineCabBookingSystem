@@ -1,5 +1,6 @@
 
 using CabApp.Data;
+using CabApp.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace CabApp.API
@@ -11,13 +12,14 @@ namespace CabApp.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
-
             builder.Services.AddControllers();
-
             builder.Services.AddDbContext<CabAppDbContext>
+            
             (options => options.UseSqlServer
             (builder.Configuration.GetConnectionString("Constr")));
+
+            //Dependency for customer access service 
+            builder.Services.AddScoped<IAdminAccessService, AdminAccessService>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

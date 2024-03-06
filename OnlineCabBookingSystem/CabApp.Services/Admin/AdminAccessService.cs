@@ -49,9 +49,6 @@ namespace CabApp.Services
             admin.PhoneNumber = 0;
             admin.UserName = request.UserName;
 
-
-
-
             _dbContext.Admins.Add(admin);
             _dbContext.SaveChanges();
 

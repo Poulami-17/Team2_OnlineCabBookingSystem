@@ -18,10 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CabApp.Data\CabApp.Data.csproj" />
     <ProjectReference Include="..\CabApp.Entities\CabApp.Entities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\CabApp.Services\CabApp.Services.csproj" />
   </ItemGroup>
 
 </Project>

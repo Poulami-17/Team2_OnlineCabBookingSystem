@@ -6,21 +6,21 @@ namespace CabApp.API
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DriverAccessController : ControllerBase
+    public class AdminAccessController : ControllerBase
     {
         //declaring object of dependency
-        private readonly IDriverAccessService _driverAccessService;
+        private readonly IAdminAccessService _adminAccessService;
 
         //injecting dependency in the constructor
-        public DriverAccessController(IDriverAccessService driverAccessService)
+        public AdminAccessController(IAdminAccessService adminAccessService)
         {
-            this._driverAccessService = driverAccessService;
+            this._adminAccessService = adminAccessService;
         }
 
         [HttpPost]
-        public IActionResult DriverSignInPost(DriverSignInRequest request)
+        public IActionResult AdminSignInPost(AdminSignInRequest request)
         {
-            var claims = _driverAccessService.DriverSignIn(request);
+            var claims = _adminAccessService.AdminSignIn(request);
 
             if (claims != null)
             {

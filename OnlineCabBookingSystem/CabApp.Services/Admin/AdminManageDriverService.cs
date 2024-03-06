@@ -42,7 +42,30 @@ namespace CabApp.Services
             if (_dbContext.Drivers.Any(d => d.ID != driver.ID))
                 throw new NotExistsException("Driver Not Exists");
 
-           _dbContext.Drivers.Update(driver);
+
+            
+           var updateDriver = await _dbContext.Drivers.Where(x => x.ID == driver.ID).SingleAsync();
+
+
+
+            updateDriver.LicenseNumber = driver.LicenseNumber;
+
+            updateDriver.Password = driver.Password;
+
+            updateDriver.Name = driver.Name;
+
+            updateDriver.Email = driver.Email;
+
+            updateDriver.UserName = driver.UserName;
+
+            updateDriver.AadharNumber = driver.AadharNumber;    
+
+            updateDriver.PhoneNumber = driver.PhoneNumber;
+
+            
+
+
+            _dbContext.Drivers.Update(driver);
             _dbContext.SaveChanges();
 
             return driver;  
@@ -53,12 +76,15 @@ namespace CabApp.Services
         public async Task<bool> DeleteDriver(int id)
         {
             var driver = await _dbContext.Drivers.FindAsync(id);
+            
+
             if (driver == null)
             {
                 throw new NotExistsException("Driver Not Exists");
             }
+            driver.DeleteDate = DateTime.Now;
 
-            _dbContext.Drivers.Remove(driver);
+            _dbContext.Drivers.Update(driver);
             await _dbContext.SaveChangesAsync();
 
             return true;

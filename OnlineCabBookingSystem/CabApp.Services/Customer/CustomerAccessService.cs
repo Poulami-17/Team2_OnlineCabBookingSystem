@@ -8,6 +8,8 @@ using System.Security.Authentication;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using CabApp.Data;
+using CabApp.Entities;
 
 namespace CabApp.Services
 {
@@ -35,6 +37,7 @@ namespace CabApp.Services
 
             return result;
         }
+    
 
         public Customer CustomerSignUp(CustomerSignUprequest request)
         {

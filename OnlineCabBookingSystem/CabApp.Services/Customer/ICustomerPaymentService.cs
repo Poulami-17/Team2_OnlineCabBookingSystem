@@ -8,7 +8,8 @@ namespace CabApp.Services
 {
     public interface ICustomerPaymentService
     {
-        Task<bool> ProcessPayment(string customerId, decimal amount);
-      
+        Task<bool> ProcessPayment(int RideId, decimal amount);
+
     }
+
 }

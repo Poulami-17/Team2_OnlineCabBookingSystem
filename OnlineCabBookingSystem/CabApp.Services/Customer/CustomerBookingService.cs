@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CabApp.Data;
 using CabApp.Entities;
 using CabApp.Services.Customer;
+using CabApp.Services.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace CabApp.Services

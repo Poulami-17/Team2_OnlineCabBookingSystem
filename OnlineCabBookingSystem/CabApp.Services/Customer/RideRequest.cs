@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CabApp.Services.Customer
+namespace CabApp.Services
 {
     public class RideRequest
     {

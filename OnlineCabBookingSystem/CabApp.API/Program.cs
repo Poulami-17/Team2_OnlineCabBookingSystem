@@ -12,19 +12,11 @@ namespace CabApp.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
-
             builder.Services.AddControllers();
 
-
-            //Dependency Registion for DbContext Class
             builder.Services.AddDbContext<CabAppDbContext>
             (options => options.UseSqlServer
             (builder.Configuration.GetConnectionString("Constr")));
-
-            //Registering Dependency for DriverAccessService interface and class
-            builder.Services.AddScoped<IDriverAccessService, DriverAccessService>();
-            
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

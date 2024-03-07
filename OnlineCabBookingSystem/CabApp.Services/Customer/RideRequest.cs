@@ -11,6 +11,10 @@ namespace CabApp.Services
         public int CategoryId { get; set; }
         public int CustomerId { get; set; }
 
+        public string PickUp { get; set; }
+
+        public string DropUp { get; set;}
+
 
     }
 }

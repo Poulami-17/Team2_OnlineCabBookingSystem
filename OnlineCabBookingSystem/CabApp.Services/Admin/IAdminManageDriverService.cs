@@ -10,15 +10,12 @@ namespace CabApp.Services
 {
     public interface IAdminManageDriverService
     {
-        public Task AddNewDriversAsync(Driver driver);
+        public Task AddNewDrivers(NewDriver driver);
 
         public Task<Driver> ModifyDriver(Driver driver);
 
-        public Task<bool> DeleteDriver(int id);
+        public Task<bool> DeleteDriver(int driverId);
 
       
-
-
-
     }
 }

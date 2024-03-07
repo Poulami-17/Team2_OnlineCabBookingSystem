@@ -22,6 +22,9 @@ namespace CabApp.Services
         {
             this.context = context;
         }
+
+        //method which is responsible for checking credentials given by customer from the database 
+        //when customer try to sign in ,if successfull it wil return list of claims otherwise exception
         public List<Claim> CustomerSignIn(CustomerSignInRequest request)
         {
             var customer = context.Customers.FirstOrDefault(d => d.Email == request.Email
@@ -37,8 +40,9 @@ namespace CabApp.Services
 
             return result;
         }
-    
 
+        //method which is responsible for taking signup details for customer and saving it in the database
+        //when customer try to sign up ,it will check if he/she is already in the database or not,otherwise ,his details go for registration.
         public Customer CustomerSignUp(CustomerSignUprequest request)
         {
             //Check if the email is already in use

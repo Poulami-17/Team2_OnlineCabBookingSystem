@@ -10,10 +10,9 @@ namespace CabApp.Data
 {
     public class CabAppDbContext: DbContext
     {
-        public CabAppDbContext(DbContextOptions<CabAppDbContext> options) : base(options) 
-        {
+        //injecting DbContext Class in Constructor
+        public CabAppDbContext(DbContextOptions<CabAppDbContext> options) : base(options) {}
 
-        }
 
         public  DbSet<Admin> Admins { get; set; }
         public  DbSet<Driver> Drivers { get; set; }

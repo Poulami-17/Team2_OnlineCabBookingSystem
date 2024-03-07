@@ -16,7 +16,7 @@ namespace CabApp.API.Controllers.CustomerController
             this.customerAccessService = customerAccessService;
         }
 
-        [HttpPost("signin")]
+        [HttpPost("SignIn")]
         public IActionResult CustomerSignIn(CustomerSignInRequest request)
         {
             var claims = customerAccessService.CustomerSignIn(request);
@@ -32,7 +32,7 @@ namespace CabApp.API.Controllers.CustomerController
             return Unauthorized();
         }
 
-        [HttpPost("signup")]
+        [HttpPost("SignUp")]
         public IActionResult CustomerSignUp(CustomerSignUprequest request)
         {
             try

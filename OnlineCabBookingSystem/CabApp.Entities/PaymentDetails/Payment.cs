@@ -14,10 +14,10 @@ namespace CabApp.Entities
         public float Amount { get; set; }
 
         [Required]
-        public string PaymentMethod { get; set; }
+        public PaymentType PaymentType { get; set; }
 
         [Required]
-        public string TransactionID { get; set; }
+        public string? TransactionID { get; set; }
 
         [Required]
         public bool IsCompleted { get; set; }

@@ -10,7 +10,7 @@ namespace CabApp.Services
 {
     public interface IAdminAccessService
     {
-        Admin AdminSignUp(AdminSignUpRequest request);
+       
         List<Claim> AdminSignIn(AdminSignInRequest request);
 
         

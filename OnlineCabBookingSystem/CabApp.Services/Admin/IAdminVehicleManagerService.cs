@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace CabApp.Services
 {
-    internal interface IAdminVehicleManager
+    public interface IAdminVehicleManagerService
     {
-        Task AddNewVehicles(Vehicle vehicle);
+        Task AddNewVehicles(NewVehicle addVehicle);
         Task<List<Vehicle>> ViewAllVehicle();
         Task<Vehicle> GetVehicleById(int VehicleNumber);
         Task UpdateVehicle(Vehicle updateRequest);

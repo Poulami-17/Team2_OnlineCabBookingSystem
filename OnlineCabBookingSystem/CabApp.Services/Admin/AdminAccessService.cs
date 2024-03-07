@@ -19,31 +19,9 @@ namespace CabApp.Services
             this._dbContext = _dbContext;
         }
 
-        
-        //method which is responsible for checking credentials given by admin from the database and  give login permission
 
-        public Admin AdminSignUp(AdminSignUpRequest request)
-        {
-            if (_dbContext.Admins.Any(d => d.Email == request.Email))
-                throw new DuplicateEmailException("Email already exist");
-
-            var admin = new Admin();
-            admin.Name = request.Name;
-            admin.Email = request.Email;
-            admin.Password = request.Password;
-            admin.PhoneNumber = 0;
-            admin.UserName = request.UserName;
-
-
-
-
-            _dbContext.Admins.Add(admin);
-            _dbContext.SaveChanges();
-
-            return admin;
-        }
-
-        //method which is responsible for taking signup details and saving it in the database
+        //method which is responsible for checking credentials given by admin from the database 
+        //when admin try to sign in ,if successfull it wil return list of claims otherwise exception
         public List<Claim> AdminSignIn(AdminSignInRequest request)
         {
             var admin = _dbContext.Admins.FirstOrDefault(d => d.Email == request.Email && d.Password == request.Password);

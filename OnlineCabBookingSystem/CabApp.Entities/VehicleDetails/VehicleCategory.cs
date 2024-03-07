@@ -12,10 +12,10 @@ namespace CabApp.Entities
     public class VehicleCategory : BaseObject
     {
         [Required]
-      public string Title { get; set; }
+        public string Title { get; set; }
 
         [StringLength(50)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
         [Required]
         public float PerKmCharge { get; set; }
     }

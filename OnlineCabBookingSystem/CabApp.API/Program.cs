@@ -28,6 +28,9 @@ namespace CabApp.API
             //Registering Dependency for DriverAccessService interface and class
             builder.Services.AddScoped<IDriverAccessService, DriverAccessService>();
 
+            //Registering Dependency for CustomerAccessService interface and class
+            builder.Services.AddScoped<ICustomerAccessService, CustomerAccessService>();
+
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

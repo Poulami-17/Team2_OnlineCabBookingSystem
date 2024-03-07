@@ -2,6 +2,8 @@
 using CabApp.Data;
 using Microsoft.EntityFrameworkCore;
 using CabApp.Services;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace CabApp.API
 {
@@ -31,6 +33,22 @@ namespace CabApp.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
+            //telling web api to authenticate jwt token  which is coming in header
+            builder.Services.AddAuthentication().AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.ASCII.GetBytes(JwtTokenGenerator.GenerateKeyName("Batman is not really a bat and may be not even a cat"))
+                    )
+                };
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -40,8 +58,13 @@ namespace CabApp.API
                 app.UseSwaggerUI();
             }
 
-            app.UseAuthorization();
+           
 
+            //newly added
+           
+            app.UseAuthentication();
+            app.UseRouting();
+            app.UseAuthorization();
 
             app.MapControllers();
 

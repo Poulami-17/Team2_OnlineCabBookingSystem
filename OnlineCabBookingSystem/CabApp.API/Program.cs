@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using CabApp.Services;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.OpenApi.Models;
 
 namespace CabApp.API
 {
@@ -16,6 +17,39 @@ namespace CabApp.API
             // Add services to the container.
             builder.Services.AddControllers();
 
+            //this is creating a pop up window for authorization in the swagger
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test01", Version = "v1" });
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "JWT Authorization header using the Bearer scheme."
+
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                          {
+                              Reference = new OpenApiReference
+                              {
+                                  Type = ReferenceType.SecurityScheme,
+                                  Id = "Bearer"
+                              }
+                          },
+                         new string[] {}
+                    }
+                });
+            });
+
+
+            //register dbcontext as dependency
             builder.Services.AddDbContext<CabAppDbContext>
             (options => options.UseSqlServer
             (builder.Configuration.GetConnectionString("Constr")));
@@ -30,12 +64,6 @@ namespace CabApp.API
 
             //Registering Dependency for CustomerAccessService interface and class
             builder.Services.AddScoped<ICustomerAccessService, CustomerAccessService>();
-
-
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
 
             //telling web api to authenticate jwt token  which is coming in header
             builder.Services.AddAuthentication().AddJwtBearer(options =>
@@ -52,6 +80,12 @@ namespace CabApp.API
                 };
             });
 
+
+
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -64,9 +98,9 @@ namespace CabApp.API
            
 
             //newly added
-           
             app.UseAuthentication();
             app.UseRouting();
+
             app.UseAuthorization();
 
             app.MapControllers();

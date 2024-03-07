@@ -12,9 +12,9 @@ namespace CabApp.Entities
 
         [Required]
         [StringLength(100)]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         [Required]
-        public float AverageRating { get; set; }
+        public float? AverageRating { get; set; }
     }
 }

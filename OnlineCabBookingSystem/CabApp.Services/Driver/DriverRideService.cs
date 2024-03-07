@@ -30,13 +30,14 @@ namespace CabApp.Services
         }
 
 
-        //When driver accept the ride ,it will send back ride id and will get that ride details
-        public async Task<Ride> AcceptRide(int id,int driverId)
+        //When driver accept the ride ,it will send ride id and driver id and will get that ride details
+        public async Task<Ride> AcceptRide(int rideId,int driverId)
         {
-            var acceptedRide = await context.Rides.Where(x => x.ID == id).SingleAsync();
+            var acceptedRide = await context.Rides.FirstOrDefaultAsync(x => x.ID == rideId);
 
 
             acceptedRide.Driver.AvailabilityStatus = false;
+
             acceptedRide.RideStatus = RideStatus.Accepted;
 
             acceptedRide.Driver = await context.Drivers.Where(x=>x.ID==driverId).SingleAsync();
@@ -44,27 +45,28 @@ namespace CabApp.Services
             context.Rides.Update(acceptedRide);
             await context.SaveChangesAsync();
 
-            return await context.Rides.Where(x => x.ID == id).SingleAsync();
+            return await context.Rides.FirstOrDefaultAsync(x => x.ID == rideId);
         }
 
         
 
 
-        //When driver click on complete ride button,then ride status will change and he will able to see the payment details
+        //When driver click on complete ride ,then ride status will change and he will able to see the payment details
        
-        public async Task<Payment> RideComplete(int id)
+        public async Task<Payment> CompleteRide(int rideId)
         {
-            var currentRide = await context.Rides.Where(x => x.ID == id).SingleAsync();
+            var currentRide = await context.Rides.FirstOrDefaultAsync(x => x.ID == rideId);
 
             currentRide.Driver.AvailabilityStatus = true;
 
             currentRide.RideStatus = RideStatus.Completed;
 
             context.Rides.Update(currentRide);
+
             await context.SaveChangesAsync();
 
-            return await context.Payments.Where(x=>x.ID == id).SingleAsync();
-            
+            return await context.Payments.FirstOrDefaultAsync(x => x.ID == rideId);
+
 
         }
     }

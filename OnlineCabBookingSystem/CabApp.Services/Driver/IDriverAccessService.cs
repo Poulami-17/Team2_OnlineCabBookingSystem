@@ -10,7 +10,6 @@ namespace CabApp.Services
 {
     public interface IDriverAccessService
     {
-        Driver DriverSignUp(DriverSignUpRequest request);
         List<Claim> DriverSignIn(DriverSignInRequest request);
     }
 }

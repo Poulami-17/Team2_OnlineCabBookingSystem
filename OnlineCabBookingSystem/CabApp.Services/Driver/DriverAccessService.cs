@@ -22,7 +22,9 @@ namespace CabApp.Services
             this.context = context;
         }
 
-        //method which is responsible for checking credentials given by driver from the database and  give login permission
+
+
+        //method which is responsible for checking credentials given by driver from the database 
         //when driver try to sign in ,if successfull it wil return list of claims otherwise exception
         public List<Claim> DriverSignIn(DriverSignInRequest request)
         {
@@ -40,24 +42,5 @@ namespace CabApp.Services
             return result;
         }
 
-        //method which is responsible for taking signup details and saving it in the database
-        //when driver try to sign up ,it will check if he/she is already in the database or not,otherwise ,his details go for registration.
-        public Driver DriverSignUp(DriverSignUpRequest request)
-        {
-            //Check if the email is already in use
-            if (context.Drivers.Any(d => d.Email == request.Email))
-                throw new DuplicateEmailException("Email already exist");
-
-            var driver = new Driver();
-
-            driver.Email = request.Email;
-            driver.Name = request.Name;
-            driver.Password = request.Password;
-
-            context.Drivers.Add(driver);
-            context.SaveChanges();
-
-            return driver;
-        }
     }
 }

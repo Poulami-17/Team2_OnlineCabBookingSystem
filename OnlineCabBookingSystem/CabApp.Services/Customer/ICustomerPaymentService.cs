@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CabApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace CabApp.Services
 {
     public interface ICustomerPaymentService
     {
-        Task<bool> ProcessPayment(int RideId, decimal amount);
+        Task<bool> ProcessPayment(PaymentRequest request);
 
     }
 

@@ -12,11 +12,11 @@ namespace CabApp.Entities
         [Key]
         public int ID { get; set; }
 
-        public DateTime Create { get; set; }
+        public DateTime CreateDate { get; set; }
 
-        public DateTime Update { get; set; }
+        public DateTime? UpdateDate { get; set; }
 
-        public DateTime DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
 
     }
 }

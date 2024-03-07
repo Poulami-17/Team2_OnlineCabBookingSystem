@@ -17,7 +17,7 @@ namespace CabApp.API
             this._driverAccessService = driverAccessService;
         }
 
-        [HttpPost]
+        [HttpPost("SignIn")]
         public IActionResult DriverSignInPost(DriverSignInRequest request)
         {
             var claims = _driverAccessService.DriverSignIn(request);

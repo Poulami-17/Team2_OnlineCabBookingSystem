@@ -24,20 +24,23 @@ namespace CabApp.Services
         }
 
 
-
+        //it will book a new ride
         public async Task<Ride> BookCab(RideRequest request)
         {
-            if (context.Rides.Any(d => d.Customer.ID == request.CustomerId && d.RideStatus != RideStatus.Completed))
+            if (context.Rides.Any(d => d.Customer.ID == request.CustomerId && d.RideStatus == RideStatus.Ongoing))
                 throw new CustomerRideOnGoingException("Customer already has a ongoing ride");
 
             var customer = context.Customers.Find(request.CustomerId);
             var category = context.VehicleCategories.Find(request.CategoryId);
+            
 
-            //pending and accepted condition
+            
             Ride ride = new Ride();
+
             ride.RideStatus = RideStatus.Pending;
             ride.Customer = customer;
-
+            ride.PickUpLocation = request.PickUp;
+            ride.DropOffLocation = request.DropUp;
 
 
             context.Rides.Add(ride);
@@ -47,7 +50,7 @@ namespace CabApp.Services
         }
 
       
-
+        //customer will able to see driver details
         public async Task<Ride> GetRiderDetails(int riderId)
         {
              var ride = await context.Rides.Include(d => d.Driver).FirstOrDefaultAsync(d => d.ID == riderId);
@@ -56,13 +59,16 @@ namespace CabApp.Services
         }
 
 
-        public async Task<bool> CancelBooking(int customerId, int bookingId)
+        //customer can cancel his ride
+        public async Task<bool> CancelRide(int customerId, int rideId)
         {
-            var booking = context.Rides.FirstOrDefault(b => b.ID == bookingId && b.Customer.ID == customerId);
-            if (booking != null)
+            var ride =  context.Rides.FirstOrDefault(b => b.ID == rideId && b.Customer.ID == customerId);
+
+            if (ride.RideStatus.Equals(RideStatus.Accepted)|| ride.RideStatus.Equals(RideStatus.Pending))
             {
-                booking.RideStatus = RideStatus.Cancelled;
-                context.Rides.Update(booking);
+                ride.RideStatus = RideStatus.Cancelled;
+
+                context.Rides.Update(ride);
 
                 await context.SaveChangesAsync();
 

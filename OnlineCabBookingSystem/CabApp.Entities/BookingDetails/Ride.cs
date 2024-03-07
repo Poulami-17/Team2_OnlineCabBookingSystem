@@ -21,7 +21,7 @@ namespace CabApp.Entities
 
         [Required]
         [StringLength(200)]
-        public string PickupLocation { get; set; }
+        public string PickUpLocation { get; set; }
 
         [Required]
         [StringLength(200)]
@@ -33,6 +33,6 @@ namespace CabApp.Entities
         [Required]
         public RideStatus RideStatus { get; set; }
 
-        //public bool IsCancel { get; set; } = false;??????????
+       
     }
 }

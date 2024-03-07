@@ -11,7 +11,7 @@ namespace CabApp.Services
     {
          Task<List<Ride>> GetPendingRide();
 
-         Task<Ride> AcceptRide(int id);
+         Task<Ride> AcceptRide(int id, int driverId);
 
          Task<Payment> RideComplete(int id);  
     }

@@ -31,11 +31,15 @@ namespace CabApp.Services
 
 
         //When driver accept the ride ,it will send back ride id and will get that ride details
-        public async Task<Ride> AcceptRide(int id)
+        public async Task<Ride> AcceptRide(int id,int driverId)
         {
             var acceptedRide = await context.Rides.Where(x => x.ID == id).SingleAsync();
 
+
             acceptedRide.Driver.AvailabilityStatus = false;
+            acceptedRide.RideStatus = RideStatus.Accepted;
+
+            acceptedRide.Driver = await context.Drivers.Where(x=>x.ID==driverId).SingleAsync();
 
             context.Rides.Update(acceptedRide);
             await context.SaveChangesAsync();

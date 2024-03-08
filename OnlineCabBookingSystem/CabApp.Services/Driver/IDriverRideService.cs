@@ -13,6 +13,8 @@ namespace CabApp.Services
 
          Task<Ride> AcceptRide(int rideId, int driverId);
 
+         Task<bool> StartRide(int rideId);
+
          Task<Payment> CompleteRide(int rideId);  
     }
 }

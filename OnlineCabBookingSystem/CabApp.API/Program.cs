@@ -16,6 +16,11 @@ namespace CabApp.API
 
             // Add services to the container.
             builder.Services.AddControllers();
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.Limits.MaxRequestBufferSize = 1024 * 1024 * 1024;
+
+            });
 
             //this is creating a pop up window for authorization in the swagger
             builder.Services.AddSwaggerGen(c =>
@@ -58,6 +63,13 @@ namespace CabApp.API
 
             //Registering Dependency for AdminAccessService interface and class
             builder.Services.AddScoped<IAdminAccessService, AdminAccessService>();
+
+            //Registering Dependency for AdminManagedDriver interface and class
+            builder.Services.AddScoped<IAdminManageDriverService, AdminManageDriverService>();
+
+            //Registering Dependency for AdminVehicleManager interface and class
+            builder.Services.AddScoped<IAdminVehicleManagerService, AdminVehicleManagerService>();
+
 
             //Registering Dependency for DriverAccessService interface and class
             builder.Services.AddScoped<IDriverAccessService, DriverAccessService>();

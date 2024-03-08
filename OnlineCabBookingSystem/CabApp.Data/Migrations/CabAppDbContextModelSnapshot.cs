@@ -147,6 +147,10 @@ namespace CabApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LicenceCertificatePdf")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -192,7 +196,8 @@ namespace CabApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<float>("Amount")
+                    b.Property<float?>("Amount")
+                        .IsRequired()
                         .HasColumnType("real");
 
                     b.Property<DateTime>("CreateDate")
@@ -236,7 +241,8 @@ namespace CabApp.Data.Migrations
                     b.Property<DateTime?>("DeleteDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<float>("Distance")
+                    b.Property<float?>("Distance")
+                        .IsRequired()
                         .HasColumnType("real");
 
                     b.Property<int>("DriverID")
@@ -336,7 +342,8 @@ namespace CabApp.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<float>("PerKmCharge")
+                    b.Property<float?>("PerKmCharge")
+                        .IsRequired()
                         .HasColumnType("real");
 
                     b.Property<string>("Title")

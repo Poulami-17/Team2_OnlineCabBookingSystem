@@ -17,6 +17,6 @@ namespace CabApp.Services
         public string Brand { get; set; }
         public string? Color { get; set; }
         public VehicleType VehicleType { get; set; }
-        public VehicleCategory Category { get; set; }
+        public int CategoryId { get; set; }
     }
 }

@@ -9,10 +9,10 @@ namespace CabApp.Services
 {
     public interface IAdminVehicleManagerService
     {
-        Task AddNewVehicles(NewVehicle addVehicle);
+        Task<Vehicle> AddNewVehicles(NewVehicle addVehicle);
         Task<List<Vehicle>> ViewAllVehicle();
         Task<Vehicle> GetVehicleById(int VehicleNumber);
-        Task UpdateVehicle(Vehicle updateRequest);
+        Task<Vehicle> UpdateVehicle(Vehicle updateRequest);
         Task<bool> DeleteVehicle(int VehicleId);
     }
 }

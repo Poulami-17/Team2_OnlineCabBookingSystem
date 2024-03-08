@@ -11,7 +11,7 @@ namespace CabApp.Entities
     public class Payment : BaseObject
     {
         [Required]
-        public float Amount { get; set; }
+        public float? Amount { get; set; } = 0.0f;
 
         [Required]
         public PaymentType PaymentType { get; set; }

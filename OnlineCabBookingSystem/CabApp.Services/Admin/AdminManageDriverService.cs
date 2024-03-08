@@ -41,7 +41,7 @@ namespace CabApp.Services
         }
 
         //Add all the details of a new Driver
-        public async Task AddNewDrivers(NewDriver driver)
+        public async Task<Driver> AddNewDrivers(NewDriver driver)
         {
             if (_dbContext.Drivers.Any(d => d.AadharNumber == driver.AadharNumber))
                 throw new AlreadyExistsException(" Driver already exist");
@@ -52,10 +52,13 @@ namespace CabApp.Services
             addDriver.LicenseNumber = driver.LicenseNumber;
             addDriver.Password = driver.Password;
             addDriver.Name = driver.Name;
+            addDriver.Gender = driver.Gender;
             addDriver.Email = driver.Email;
             addDriver.UserName = driver.UserName;
             addDriver.AadharNumber = driver.AadharNumber;
             addDriver.PhoneNumber = driver.PhoneNumber;
+            addDriver.CreateDate = DateTime.Now;
+            addDriver.Vehicle = _dbContext.Vehicles.Find(driver.VehicleId);
 
             if (driver.DriverPhoto != null)
             {
@@ -77,8 +80,10 @@ namespace CabApp.Services
 
 
 
-            await _dbContext.Drivers.AddAsync(addDriver);
+             await _dbContext.Drivers.AddAsync(addDriver);
             await _dbContext.SaveChangesAsync();
+
+            return addDriver;
         }
 
 

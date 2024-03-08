@@ -1,4 +1,5 @@
-﻿using CabApp.Services;
+﻿using CabApp.Entities;
+using CabApp.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,19 +19,19 @@ namespace CabApp.API.Controllers.AdminController
 
         [HttpPost]
         [Authorize]
-        public IActionResult AddNewVehiclePost()
+        public async Task<IActionResult> AddNewVehiclePost()
         {
             NewVehicle request = JsonSerializer.Deserialize<NewVehicle>(
                                              HttpContext.Request.Form["data"]);
 
             if (HttpContext.Request.Form.Files.Count > 0)
             {
-                request.VehiclePhoto = HttpContext.Request.Form.Files[0];
+                request.VehiclePhoto = HttpContext.Request.Form.Files["vehiclePhoto"];
             }
 
-            var driver = _adminVehicleManagerService.AddNewVehicles(request);
+            var vehicle = await _adminVehicleManagerService.AddNewVehicles(request);
 
-            return Ok(driver);
+            return Ok(vehicle);
         }
     }
 }

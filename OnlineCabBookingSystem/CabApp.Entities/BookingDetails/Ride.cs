@@ -28,7 +28,7 @@ namespace CabApp.Entities
         public string DropOffLocation { get; set; }
 
         [Required]
-        public float Distance { get; set; }
+        public float? Distance { get; set; } = 0.0f;
 
         [Required]
         public RideStatus RideStatus { get; set; }

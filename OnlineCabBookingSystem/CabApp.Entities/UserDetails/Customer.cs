@@ -15,6 +15,6 @@ namespace CabApp.Entities
         public string? Address { get; set; }
 
         [Required]
-        public float? AverageRating { get; set; }
+        public float? AverageRating { get; set; } = 0.0f;
     }
 }

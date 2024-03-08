@@ -12,6 +12,7 @@ namespace CabApp.Services
     public class NewDriver
     {
         public string Name { get; set; }
+        public string Gender { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -20,6 +21,8 @@ namespace CabApp.Services
         public string LicenseNumber { get; set; }
         public IFormFile DriverPhoto { get; set; }
         public IFormFile LicenceCertificatePdf { get; set; }
+
+        public int VehicleId { get; set; }
     
     }
 }

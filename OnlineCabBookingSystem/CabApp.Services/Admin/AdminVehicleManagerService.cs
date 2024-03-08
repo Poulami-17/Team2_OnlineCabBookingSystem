@@ -35,7 +35,7 @@ namespace CabApp.Services
         }
 
         //Adding a new vehicle 
-        public async Task AddNewVehicles(NewVehicle addVehicle)
+        public async Task<Vehicle> AddNewVehicles(NewVehicle addVehicle)
         {
 
             if (_dbContext.Vehicles.Any(d => d.VehicleNumber == addVehicle.VehicleNumber))
@@ -47,7 +47,9 @@ namespace CabApp.Services
             vehicle.Brand = addVehicle.Brand;
             vehicle.Color = addVehicle.Color;
             vehicle.VehicleType = addVehicle.VehicleType;
-            vehicle.Category = addVehicle.Category;
+            vehicle.Category = _dbContext.VehicleCategories.Find(addVehicle.CategoryId);
+            vehicle.CreateDate = DateTime.Now;
+
 
             if (addVehicle.VehiclePhoto != null)
             {
@@ -61,6 +63,8 @@ namespace CabApp.Services
 
             await _dbContext.AddAsync(vehicle);
             await _dbContext.SaveChangesAsync();
+
+            return vehicle;
         }
 
         //To View all the vehicles 
@@ -93,7 +97,7 @@ namespace CabApp.Services
         }
 
         //To Modify Vehicle
-        public async Task UpdateVehicle(Vehicle updateRequest)
+        public async Task<Vehicle> UpdateVehicle(Vehicle updateRequest)
         {
             if (updateRequest == null)
             {
@@ -107,8 +111,11 @@ namespace CabApp.Services
             vehicle.Color = updateRequest.Color;
             vehicle.VehicleType = updateRequest.VehicleType;
 
-            _dbContext.Vehicles.Update(vehicle);
+             _dbContext.Vehicles.Update(vehicle);
             await _dbContext.SaveChangesAsync();
+
+            return vehicle;
+
         }
 
     }

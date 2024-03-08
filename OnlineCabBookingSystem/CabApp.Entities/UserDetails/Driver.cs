@@ -12,6 +12,9 @@ namespace CabApp.Entities
         [Required]
         public string DriverPhoto { get; set; }
 
+        [Required]  
+        public string Gender { get; set; }
+
 
         [Required]
         [RegularExpression("[A-Z]{4} [0-9]{4}", ErrorMessage = "Invalid AadharNo")]
@@ -25,7 +28,7 @@ namespace CabApp.Entities
         public string LicenceCertificatePdf { get; set; }
 
         [Required]
-        public float? AverageRating { get; set; }
+        public float? AverageRating { get; set; } = 0.0f;
 
         [Required]
         public bool AvailabilityStatus { get; set; }

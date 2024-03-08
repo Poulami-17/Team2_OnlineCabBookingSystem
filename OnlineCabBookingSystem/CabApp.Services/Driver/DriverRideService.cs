@@ -49,6 +49,23 @@ namespace CabApp.Services
         }
 
         
+        //when driver will start the ride
+
+        public async Task<bool> StartRide(int rideId)
+        {
+
+            var startedride = await context.Rides.FirstOrDefaultAsync(x => x.ID == rideId);
+
+            startedride.RideStatus = RideStatus.Started;
+            startedride.RideStatus = RideStatus.Ongoing;
+
+            context.Rides.Update(startedride);
+
+            await context.SaveChangesAsync();
+
+            return true;
+
+        }
 
 
         //When driver click on complete ride ,then ride status will change and he will able to see the payment details

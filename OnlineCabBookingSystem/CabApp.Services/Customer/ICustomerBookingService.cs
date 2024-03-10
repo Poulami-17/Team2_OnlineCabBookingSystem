@@ -9,14 +9,10 @@ namespace CabApp.Services
 {
     public interface ICustomerBookingService
     {
+            Task<Ride> BookCab(RideRequest request);
+            Task<Ride> GetRiderDetails(int riderId);            
+            Task<bool> CancelRide(int customerId, int rideId);
 
-        public interface ICustomerBookingService
-        {
-            Task<Ride> BookCab(int rideId);
-            Task<Driver> GetDriverDetails(int driverId);
-            Task<bool> CancelRide(int rideId);
-
-        }
     }
 }
 

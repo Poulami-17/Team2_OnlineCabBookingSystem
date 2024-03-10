@@ -31,8 +31,10 @@ namespace CabApp.Services
                 throw new CustomerRideOnGoingException("Customer already has a ongoing ride");
 
             var customer = context.Customers.Find(request.CustomerId);
-            var category = context.VehicleCategories.Find(request.CategoryId);
             
+            var vehicleCategory = context.VehicleCategories.Find(request.VehicleCategoryId);
+
+           
 
             
             Ride ride = new Ride();
@@ -41,6 +43,15 @@ namespace CabApp.Services
             ride.Customer = customer;
             ride.PickUpLocation = request.PickUp;
             ride.DropOffLocation = request.DropUp;
+            ride.Distance = request.Distance;
+
+
+
+            ride.Payment = new Payment();
+                
+                
+            ride.Payment.Amount = request.Distance * vehicleCategory.PerKmCharge;
+
 
 
             context.Rides.Add(ride);

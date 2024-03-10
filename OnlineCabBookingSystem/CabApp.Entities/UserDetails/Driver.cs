@@ -27,7 +27,7 @@ namespace CabApp.Entities
         [Required]
         public string LicenceCertificatePdf { get; set; }
 
-        [Required]
+        
         public float? AverageRating { get; set; } = 0.0f;
 
         [Required]

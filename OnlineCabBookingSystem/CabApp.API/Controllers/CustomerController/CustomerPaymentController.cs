@@ -16,7 +16,7 @@ namespace CabApp.API
         }
 
         [HttpPost]
-        public async Task<IActionResult> ProcessPayment([FromBody] PaymentRequest request)
+        public async Task<IActionResult> ProcessPayment( PaymentRequest request)
         {
             await _customerPaymentService.ProcessPayment(request);
             return Ok();

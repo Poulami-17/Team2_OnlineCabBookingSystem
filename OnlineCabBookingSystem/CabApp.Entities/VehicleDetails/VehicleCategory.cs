@@ -17,6 +17,6 @@ namespace CabApp.Entities
         [StringLength(50)]
         public string? Description { get; set; }
         [Required]
-        public float? PerKmCharge { get; set; } = 0.0f;
+        public float PerKmCharge { get; set; } = 0.0f;
     }
 }

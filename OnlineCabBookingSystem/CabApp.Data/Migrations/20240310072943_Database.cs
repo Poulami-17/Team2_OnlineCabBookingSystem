@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CabApp.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class DataBase : Migration
+    public partial class Database : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -37,8 +37,8 @@ namespace CabApp.Data.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Address = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    AverageRating = table.Column<float>(type: "real", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    AverageRating = table.Column<float>(type: "real", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeleteDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -61,7 +61,7 @@ namespace CabApp.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Amount = table.Column<float>(type: "real", nullable: false),
                     PaymentType = table.Column<int>(type: "int", nullable: false),
-                    TransactionID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TransactionID = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsCompleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -128,7 +128,7 @@ namespace CabApp.Data.Migrations
                     AadharNumber = table.Column<long>(type: "bigint", nullable: false),
                     LicenseNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LicenceCertificatePdf = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AverageRating = table.Column<float>(type: "real", nullable: false),
+                    AverageRating = table.Column<float>(type: "real", nullable: true),
                     AvailabilityStatus = table.Column<bool>(type: "bit", nullable: false),
                     VehicleID = table.Column<int>(type: "int", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),

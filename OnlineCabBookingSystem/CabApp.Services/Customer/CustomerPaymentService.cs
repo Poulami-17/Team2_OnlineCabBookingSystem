@@ -37,8 +37,6 @@ namespace CabApp.Services
 
             payment.PaymentType = request.PaymentType;
 
-            payment.Amount = request.Amount;
-
             payment.IsCompleted = true;
 
             ride.Payment = payment;

@@ -54,9 +54,9 @@ namespace CabApp.Services
             customer.Address = "Not Updated";
             customer.Name = request.Name;
             customer.Password = request.Password;
-            customer.PhoneNumber = 0;
+            customer.PhoneNumber = request.Phone;
             customer.UserName = "";
-
+            customer.CreateDate = DateTime.Now;
             context.Customers.Add(customer);
             context.SaveChanges();
 

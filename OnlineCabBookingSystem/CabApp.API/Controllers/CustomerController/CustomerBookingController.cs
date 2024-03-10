@@ -25,14 +25,14 @@ namespace CabApp.API
 
 
 
-        [HttpPost]
+        [HttpPost("BookCab")]
         public async Task<IActionResult> BookCab(RideRequest request)
         {
-            await _cusomerBookingService.BookCab(request);
-            return Ok();
+            var result = await _cusomerBookingService.BookCab(request);
+            return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPost("CancelRides")]
         public async Task<IActionResult> CancelRides(int customerId, int rideId)
         {
             await _cusomerBookingService.CancelRide(customerId,rideId);

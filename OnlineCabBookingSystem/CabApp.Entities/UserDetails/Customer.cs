@@ -10,11 +10,10 @@ namespace CabApp.Entities
     public class Customer : User
     {
 
-        [Required]
         [StringLength(100)]
         public string? Address { get; set; }
 
-        [Required]
+      
         public float? AverageRating { get; set; } = 0.0f;
     }
 }

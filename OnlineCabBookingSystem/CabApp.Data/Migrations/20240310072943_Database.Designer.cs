@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CabApp.Data.Migrations
 {
     [DbContext(typeof(CabAppDbContext))]
-    [Migration("20240308074301_DataBase")]
-    partial class DataBase
+    [Migration("20240310072943_Database")]
+    partial class Database
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -76,12 +76,10 @@ namespace CabApp.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<float?>("AverageRating")
-                        .IsRequired()
                         .HasColumnType("real");
 
                     b.Property<DateTime>("CreateDate")
@@ -133,7 +131,6 @@ namespace CabApp.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<float?>("AverageRating")
-                        .IsRequired()
                         .HasColumnType("real");
 
                     b.Property<DateTime>("CreateDate")
@@ -216,7 +213,6 @@ namespace CabApp.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TransactionID")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdateDate")

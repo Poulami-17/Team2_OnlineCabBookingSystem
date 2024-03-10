@@ -11,13 +11,12 @@ namespace CabApp.Entities
     public class Payment : BaseObject
     {
         [Required]
-        public float? Amount { get; set; } = 0.0f;
+        public float Amount { get; set; } = 0.0f; 
 
         [Required]
         public PaymentType PaymentType { get; set; }
 
-        [Required]
-        public string? TransactionID { get; set; }
+        public string TransactionID { get; set; }
 
         [Required]
         public bool IsCompleted { get; set; }

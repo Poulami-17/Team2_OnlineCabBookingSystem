@@ -40,7 +40,7 @@ namespace CabApp.Services
 
             acceptedRide.RideStatus = RideStatus.Accepted;
 
-            acceptedRide.Driver = await context.Drivers.Where(x=>x.ID==driverId).SingleAsync();
+            acceptedRide.Driver = await context.Drivers.FirstOrDefaultAsync(x=>x.ID==driverId);
 
             context.Rides.Update(acceptedRide);
             await context.SaveChangesAsync();

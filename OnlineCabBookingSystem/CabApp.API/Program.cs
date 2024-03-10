@@ -77,6 +77,17 @@ namespace CabApp.API
             //Registering Dependency for CustomerAccessService interface and class
             builder.Services.AddScoped<ICustomerAccessService, CustomerAccessService>();
 
+
+            //Registering Dependency for CustomerBookingService interface and class
+            builder.Services.AddScoped<ICustomerBookingService, CustomerBookingService>();
+
+
+
+
+
+
+
+
             //telling web api to authenticate jwt token  which is coming in header
             builder.Services.AddAuthentication().AddJwtBearer(options =>
             {

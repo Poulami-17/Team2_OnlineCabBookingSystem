@@ -10,7 +10,7 @@ namespace CabApp.Services
     public class PaymentRequest
     {
         public int RideId { get; set; }
-        public float Amount { get; set; }
+        public float Amount { get; set; } = 0.0f;
         public PaymentType  PaymentType { get; set; }
     }
 }

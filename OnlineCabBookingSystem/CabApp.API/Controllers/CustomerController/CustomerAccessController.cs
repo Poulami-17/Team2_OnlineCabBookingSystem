@@ -11,7 +11,7 @@ namespace CabApp.API.Controllers.CustomerController
         private readonly ICustomerAccessService customerAccessService;
 
         //injecting dependency in the constructor
-        public CustomerAccessController(ICustomerAccessService driverAccessService)
+        public CustomerAccessController(ICustomerAccessService customerAccessService)
         {
             this.customerAccessService = customerAccessService;
         }

@@ -2,6 +2,7 @@
 using Azure.Storage.Blobs;
 using CabApp.Data;
 using CabApp.Entities;
+using CabApp.Services.Admin;
 using CabApp.Services.Exceptions;
 //using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -59,6 +60,7 @@ namespace CabApp.Services
             addDriver.PhoneNumber = driver.PhoneNumber;
             addDriver.CreateDate = DateTime.Now;
             addDriver.Vehicle = _dbContext.Vehicles.Find(driver.VehicleId);
+            addDriver.AvailabilityStatus = false;
 
             if (driver.DriverPhoto != null)
             {
@@ -88,39 +90,38 @@ namespace CabApp.Services
 
 
         //Modify The Driver Details - when admin want to save the changes in driver
-        public async Task<Driver> ModifyDriver(Driver driver)
+        public async Task<Driver> ModifyDriver(ModifyDriver driver)
 
+        
         {
-            if (_dbContext.Drivers.Any(d => d.ID != driver.ID))
+            if (!_dbContext.Drivers.Any(d => d.ID == driver.DriverId))
                 throw new NotExistsException("Driver Not Exists");
 
 
             
-           var updateDriver = await _dbContext.Drivers.FirstOrDefaultAsync(x => x.ID == driver.ID);
+           var updateDriver = await _dbContext.Drivers.FirstOrDefaultAsync(x => x.ID == driver.DriverId);
 
-
-
-            updateDriver.LicenseNumber = driver.LicenseNumber;
-
-            updateDriver.Password = driver.Password;
+           
 
             updateDriver.Name = driver.Name;
 
             updateDriver.Email = driver.Email;
 
-            updateDriver.UserName = driver.UserName;
-
-            updateDriver.AadharNumber = driver.AadharNumber;    
+            updateDriver.Password = driver.Password;
 
             updateDriver.PhoneNumber = driver.PhoneNumber;
 
-            
+            updateDriver.Vehicle = _dbContext.Vehicles.Find(driver.VehicleId);
 
 
-            _dbContext.Drivers.Update(driver);
+
+
+
+
+            _dbContext.Drivers.Update(updateDriver);
             _dbContext.SaveChanges();
 
-            return driver;  
+            return updateDriver;  
         }
 
         //Delete The Driver Details

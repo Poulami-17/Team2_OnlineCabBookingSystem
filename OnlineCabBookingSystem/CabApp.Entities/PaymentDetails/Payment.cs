@@ -14,9 +14,9 @@ namespace CabApp.Entities
         public float Amount { get; set; } = 0.0f; 
 
         [Required]
-        public PaymentType PaymentType { get; set; }
+        public PaymentType? PaymentType { get; set; }
 
-        public string TransactionID { get; set; }
+        public string? TransactionID { get; set; }
 
         [Required]
         public bool IsCompleted { get; set; }

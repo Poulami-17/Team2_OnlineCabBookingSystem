@@ -70,9 +70,28 @@ namespace CabApp.API
             //Registering Dependency for AdminVehicleManager interface and class
             builder.Services.AddScoped<IAdminVehicleManagerService, AdminVehicleManagerService>();
 
+            //Registering Dependency for AdminViewCustomerService interface and class
+            builder.Services.AddScoped<IAdminViewCustomerService,AdminViewCustomerService>();
+
+
+
+
+
+
 
             //Registering Dependency for DriverAccessService interface and class
             builder.Services.AddScoped<IDriverAccessService, DriverAccessService>();
+
+
+            //Registering Dependency for DriverRideService interface and class
+            builder.Services.AddScoped<IDriverRideService, DriverRideService>();
+
+
+
+
+
+
+
 
             //Registering Dependency for CustomerAccessService interface and class
             builder.Services.AddScoped<ICustomerAccessService, CustomerAccessService>();
@@ -80,6 +99,13 @@ namespace CabApp.API
 
             //Registering Dependency for CustomerBookingService interface and class
             builder.Services.AddScoped<ICustomerBookingService, CustomerBookingService>();
+
+
+            //Registering Dependency for CustomerPaymentService interface and class
+            builder.Services.AddScoped<ICustomerPaymentService, CustomerPaymentService>();
+
+
+
 
 
 

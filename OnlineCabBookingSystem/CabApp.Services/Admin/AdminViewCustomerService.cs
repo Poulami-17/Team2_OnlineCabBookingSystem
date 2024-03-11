@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CabApp.Services
 {
-    public class AdminViewCustomerService
+    public class AdminViewCustomerService : IAdminViewCustomerService
     {
         // declare the dbContext
         private readonly CabAppDbContext _dbContext;

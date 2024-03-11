@@ -86,10 +86,11 @@ namespace CabApp.Services
 
             if (vehicle == null)
             {
-                throw new Exception("Employee not found");
+                throw new Exception("Vehicle not found");
             }
 
             vehicle.DeleteDate = DateTime.Now;
+
             _dbContext.Vehicles.Update(vehicle);
 
             await _dbContext.SaveChangesAsync();
@@ -106,10 +107,11 @@ namespace CabApp.Services
 
             var vehicle = await _dbContext.Vehicles.FirstOrDefaultAsync(x => x.ID == updateRequest.ID);
 
-            vehicle.VehicleNumber = updateRequest.VehicleNumber;
+            
             vehicle.Brand = updateRequest.Brand;
             vehicle.Color = updateRequest.Color;
             vehicle.VehicleType = updateRequest.VehicleType;
+            vehicle.UpdateDate=DateTime.Now;
 
              _dbContext.Vehicles.Update(vehicle);
             await _dbContext.SaveChangesAsync();

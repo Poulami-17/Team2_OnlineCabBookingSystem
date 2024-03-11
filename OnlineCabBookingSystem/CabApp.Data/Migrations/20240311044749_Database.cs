@@ -158,8 +158,8 @@ namespace CabApp.Data.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerID = table.Column<int>(type: "int", nullable: false),
-                    DriverID = table.Column<int>(type: "int", nullable: false),
-                    PaymentID = table.Column<int>(type: "int", nullable: false),
+                    DriverID = table.Column<int>(type: "int", nullable: true),
+                    PaymentID = table.Column<int>(type: "int", nullable: true),
                     PickUpLocation = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     DropOffLocation = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Distance = table.Column<float>(type: "real", nullable: false),
@@ -181,14 +181,12 @@ namespace CabApp.Data.Migrations
                         name: "FK_Rides_Drivers_DriverID",
                         column: x => x.DriverID,
                         principalTable: "Drivers",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_Rides_Payments_PaymentID",
                         column: x => x.PaymentID,
                         principalTable: "Payments",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateIndex(

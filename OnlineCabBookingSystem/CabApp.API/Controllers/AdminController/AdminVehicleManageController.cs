@@ -17,6 +17,16 @@ namespace CabApp.API.Controllers.AdminController
             this._adminVehicleManagerService = adminVehicleManagerService;
         }
 
+
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult> ViewAllVehicle()
+        {
+            var vehicleList = await _adminVehicleManagerService.ViewAllVehicle();
+            return Ok(vehicleList);
+        }
+
+
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> AddNewVehiclePost()
@@ -33,6 +43,32 @@ namespace CabApp.API.Controllers.AdminController
 
             return Ok(vehicle);
         }
+
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateVehicle(Vehicle updateRequest)
+        {
+            var modifyVehicle = await _adminVehicleManagerService.UpdateVehicle(updateRequest);
+
+            return Ok(modifyVehicle);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetVehicleById(int id)
+        {
+            var employee = await _adminVehicleManagerService.GetVehicleById(id);
+            return Ok(employee);
+        }
+
+
+        [HttpDelete("{id}")]
+        [Authorize]
+        public async Task<ActionResult> DeleteVehicle(int VehicleId)
+        {
+            await _adminVehicleManagerService.DeleteVehicle(VehicleId);
+            return Ok();
+        }
+
     }
 }
 

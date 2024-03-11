@@ -33,14 +33,14 @@ namespace CabApp.Services
         //When driver accept the ride ,it will send ride id and driver id and will get that ride details
         public async Task<Ride> AcceptRide(int rideId,int driverId)
         {
-            var acceptedRide = await context.Rides.FirstOrDefaultAsync(x => x.ID == rideId);
-
+            var acceptedRide = await context.Rides.Include(d => d.Driver).FirstOrDefaultAsync(x => x.ID == rideId);
+            acceptedRide.Driver = await context.Drivers.FirstOrDefaultAsync(x => x.ID == driverId);
 
             acceptedRide.Driver.AvailabilityStatus = false;
 
             acceptedRide.RideStatus = RideStatus.Accepted;
 
-            acceptedRide.Driver = await context.Drivers.FirstOrDefaultAsync(x=>x.ID==driverId);
+          
 
             context.Rides.Update(acceptedRide);
             await context.SaveChangesAsync();
@@ -72,7 +72,9 @@ namespace CabApp.Services
        
         public async Task<Payment> CompleteRide(int rideId)
         {
-            var currentRide = await context.Rides.FirstOrDefaultAsync(x => x.ID == rideId);
+
+            var currentRide = await context.Rides.Include(d => d.Driver).FirstOrDefaultAsync(x => x.ID == rideId);
+            
 
             currentRide.Driver.AvailabilityStatus = true;
 

@@ -23,7 +23,7 @@ namespace CabApp.Entities
         public string? Color { get; set; }
 
         [Required]
-        public VehicleType VehicleType { get; set; }
+        public VehicleType? VehicleType { get; set; }
 
         [Required]
         public VehicleCategory Category { get; set; }

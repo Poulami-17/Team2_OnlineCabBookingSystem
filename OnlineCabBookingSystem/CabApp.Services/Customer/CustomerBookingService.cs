@@ -44,12 +44,11 @@ namespace CabApp.Services
             ride.PickUpLocation = request.PickUp;
             ride.DropOffLocation = request.DropUp;
             ride.Distance = request.Distance;
-
-
+            ride.CreateDate = DateTime.Now;
 
             ride.Payment = new Payment();
-                
-                
+
+            ride.Payment.PaymentType = PaymentType.Cash;
             ride.Payment.Amount = request.Distance * vehicleCategory.PerKmCharge;
 
 

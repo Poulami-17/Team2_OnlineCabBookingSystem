@@ -11,7 +11,7 @@ namespace CabApp.Entities
     public abstract class User : BaseObject
     {
         [Required(ErrorMessage = "Name is required")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
 
         [Required(ErrorMessage = "Email is required")]
@@ -21,7 +21,7 @@ namespace CabApp.Entities
 
         [Required(ErrorMessage = "Username is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 50 characters")]
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
 
 
         [Required(ErrorMessage = "Password is required")]

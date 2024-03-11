@@ -1,5 +1,6 @@
 ﻿using CabApp.Entities;
 using CabApp.Services;
+using CabApp.Services.Admin;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -37,5 +38,31 @@ namespace CabApp.API
 
             return Ok(driver);
         }
+
+
+
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<IActionResult> ModifyDriverPut(ModifyDriver driver)
+        {
+            var modifydriver = await _adminManageDriverService.ModifyDriver(driver);
+
+            return Ok(modifydriver);
+        }
+
+
+
+
+
+
+        [HttpDelete("{id}")]
+        [Authorize]
+        public async Task<IActionResult> DeleteDriver(int driverId)
+        {
+            await _adminManageDriverService.DeleteDriver(driverId);
+            return Ok();
+        }
+
     }
 }
+    

@@ -4,20 +4,21 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CabApp.Entities
 {
     public class Ride : BaseObject
     {
-        [Required]
+        
         public Customer Customer { get; set; }
 
-        [Required]
-        public Driver Driver { get; set; }
+   
+        public Driver? Driver { get; set; }
 
-        [Required]
-        public Payment Payment { get; set; }
+    
+        public Payment? Payment { get; set; }
 
         [Required]
         [StringLength(200)]
@@ -30,7 +31,7 @@ namespace CabApp.Entities
         [Required]
         public float Distance { get; set; } = 0.0f;
 
-        [Required]
+        //[Required]
         public RideStatus RideStatus { get; set; }
 
        

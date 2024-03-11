@@ -25,10 +25,17 @@ namespace CabApp.API
             return Ok(pendingList);
         }
 
-        [HttpPost]
+        [HttpPost("AcceptRide")]
         public async Task<IActionResult> AcceptRides( int rideId, int driverId)
         {
             await _driverRideService.AcceptRide(rideId,driverId);
+            return Ok();
+        }
+
+        [HttpPost("CompleteRide")]
+        public async Task<IActionResult> CompleteRide(int rideId)
+        {
+            await _driverRideService.CompleteRide(rideId);
             return Ok();
         }
     }

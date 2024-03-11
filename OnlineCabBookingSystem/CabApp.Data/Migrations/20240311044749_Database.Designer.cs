@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CabApp.Data.Migrations
 {
     [DbContext(typeof(CabAppDbContext))]
-    [Migration("20240310072943_Database")]
+    [Migration("20240311044749_Database")]
     partial class Database
     {
         /// <inheritdoc />
@@ -127,7 +127,8 @@ namespace CabApp.Data.Migrations
                     b.Property<long>("AadharNumber")
                         .HasColumnType("bigint");
 
-                    b.Property<bool>("AvailabilityStatus")
+                    b.Property<bool?>("AvailabilityStatus")
+                        .IsRequired()
                         .HasColumnType("bit");
 
                     b.Property<float?>("AverageRating")
@@ -196,8 +197,7 @@ namespace CabApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<float?>("Amount")
-                        .IsRequired()
+                    b.Property<float>("Amount")
                         .HasColumnType("real");
 
                     b.Property<DateTime>("CreateDate")
@@ -240,11 +240,10 @@ namespace CabApp.Data.Migrations
                     b.Property<DateTime?>("DeleteDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<float?>("Distance")
-                        .IsRequired()
+                    b.Property<float>("Distance")
                         .HasColumnType("real");
 
-                    b.Property<int>("DriverID")
+                    b.Property<int?>("DriverID")
                         .HasColumnType("int");
 
                     b.Property<string>("DropOffLocation")
@@ -252,7 +251,7 @@ namespace CabApp.Data.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int>("PaymentID")
+                    b.Property<int?>("PaymentID")
                         .HasColumnType("int");
 
                     b.Property<string>("PickUpLocation")
@@ -341,8 +340,7 @@ namespace CabApp.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<float?>("PerKmCharge")
-                        .IsRequired()
+                    b.Property<float>("PerKmCharge")
                         .HasColumnType("real");
 
                     b.Property<string>("Title")
@@ -378,15 +376,11 @@ namespace CabApp.Data.Migrations
 
                     b.HasOne("CabApp.Entities.Driver", "Driver")
                         .WithMany()
-                        .HasForeignKey("DriverID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DriverID");
 
                     b.HasOne("CabApp.Entities.Payment", "Payment")
                         .WithMany()
-                        .HasForeignKey("PaymentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PaymentID");
 
                     b.Navigation("Customer");
 

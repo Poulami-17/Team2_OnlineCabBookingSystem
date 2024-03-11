@@ -16,11 +16,24 @@ namespace CabApp.API
 
             // Add services to the container.
             builder.Services.AddControllers();
+
+            //this will increase the default size for file
             builder.WebHost.ConfigureKestrel(options =>
             {
                 options.Limits.MaxRequestBufferSize = 1024 * 1024 * 1024;
 
             });
+
+            //added Cors
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy => policy.WithOrigins("http://localhost:4200", "http://localhost:64133")
+                .AllowAnyMethod()
+                .AllowCredentials()
+                .AllowAnyHeader());
+            });
+
+
 
             //this is creating a pop up window for authorization in the swagger
             builder.Services.AddSwaggerGen(c =>
@@ -144,7 +157,8 @@ namespace CabApp.API
                 app.UseSwaggerUI();
             }
 
-           
+            //use cors
+            app.UseCors();
 
             //newly added
             app.UseAuthentication();

@@ -32,6 +32,7 @@ namespace CabApp.Services
             var result = new List<Claim>
             {
                 new Claim("Email",admin.Email),
+                new Claim("ID", admin.ID.ToString()),
                 new Claim(ClaimTypes.NameIdentifier,admin.Name),
             };
             return result;

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CabApp.Data.Migrations
 {
     [DbContext(typeof(CabAppDbContext))]
-    [Migration("20240311044749_Database")]
-    partial class Database
+    [Migration("20240312113944_database")]
+    partial class database
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

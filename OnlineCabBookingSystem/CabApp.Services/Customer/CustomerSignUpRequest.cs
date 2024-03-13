@@ -12,7 +12,6 @@ namespace CabApp.Services
         public string Email { get; set; }
         public string Password { get; set; }
         public long Phone {  get; set; }
-        
 
     }
 }

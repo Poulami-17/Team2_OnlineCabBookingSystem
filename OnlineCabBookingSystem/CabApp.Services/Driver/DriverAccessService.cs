@@ -36,6 +36,7 @@ namespace CabApp.Services
 
             var result = new List<Claim> {
                 new Claim("Email",driver.Email),
+                new Claim("ID", driver.ID.ToString()),
                 new Claim(ClaimTypes.NameIdentifier,driver.Name),
             };
 

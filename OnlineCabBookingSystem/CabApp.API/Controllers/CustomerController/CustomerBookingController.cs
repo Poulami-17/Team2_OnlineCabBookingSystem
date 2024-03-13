@@ -1,5 +1,6 @@
 ﻿using CabApp.Entities;
 using CabApp.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace CabApp.API
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CustomerBookingController : ControllerBase
     {
         private readonly ICustomerBookingService _cusomerBookingService;
@@ -27,8 +29,15 @@ namespace CabApp.API
         [HttpPost("BookCab")]
         public async Task<IActionResult> BookCab(RideRequest request)
         {
-            var result = await _cusomerBookingService.BookCab(request);
-            return Ok(result);
+            var id = HttpContext.User.Claims.FirstOrDefault(d => d.Type == "ID").Value;
+            if (id != null)
+            {
+                request.CustomerId = int.Parse(id);
+                var result = await _cusomerBookingService.BookCab(request);
+                return Ok(result);
+            }
+            else
+                return Unauthorized();
         }
 
         [HttpPost("CancelRides")]

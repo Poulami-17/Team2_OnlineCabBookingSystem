@@ -17,7 +17,7 @@ namespace CabApp.API.Controllers.AdminController
         }
 
         [HttpGet]
-        [Authorize]
+        
         public async Task<IActionResult> ViewAllCustomer()
         {
             var details = await _adminViewCustomerService.ViewAllCustomerAsync();

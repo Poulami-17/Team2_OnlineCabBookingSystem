@@ -21,7 +21,7 @@ namespace CabApp.API
         }
 
         [HttpPost]
-        [Authorize]
+        
         public async Task<IActionResult> AddNewDriverPost()
         {
             NewDriver request = JsonSerializer.Deserialize<NewDriver>(
@@ -42,7 +42,7 @@ namespace CabApp.API
 
 
         [HttpPut("{id}")]
-        [Authorize]
+        
         public async Task<IActionResult> ModifyDriverPut(ModifyDriver driver)
         {
             var modifydriver = await _adminManageDriverService.ModifyDriver(driver);
@@ -56,7 +56,7 @@ namespace CabApp.API
 
 
         [HttpDelete("{id}")]
-        [Authorize]
+   
         public async Task<IActionResult> DeleteDriver(int driverId)
         {
             await _adminManageDriverService.DeleteDriver(driverId);

@@ -19,7 +19,7 @@ namespace CabApp.API.Controllers.AdminController
 
 
         [HttpGet]
-        [Authorize]
+       
         public async Task<ActionResult> ViewAllVehicle()
         {
             var vehicleList = await _adminVehicleManagerService.ViewAllVehicle();
@@ -28,7 +28,7 @@ namespace CabApp.API.Controllers.AdminController
 
 
         [HttpPost]
-        [Authorize]
+       
         public async Task<IActionResult> AddNewVehiclePost()
         {
             NewVehicle request = JsonSerializer.Deserialize<NewVehicle>(
@@ -45,7 +45,7 @@ namespace CabApp.API.Controllers.AdminController
         }
 
         [HttpPut("{id}")]
-        [Authorize]
+       
         public async Task<IActionResult> UpdateVehicle(Vehicle updateRequest)
         {
             var modifyVehicle = await _adminVehicleManagerService.UpdateVehicle(updateRequest);
@@ -62,7 +62,7 @@ namespace CabApp.API.Controllers.AdminController
 
 
         [HttpDelete("{id}")]
-        [Authorize]
+     
         public async Task<ActionResult> DeleteVehicle(int VehicleId)
         {
             await _adminVehicleManagerService.DeleteVehicle(VehicleId);

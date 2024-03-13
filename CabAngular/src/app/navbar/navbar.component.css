@@ -1,0 +1,15 @@
+.nav-link{
+    color: rgb(255, 253, 253);
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+li button:hover{
+    cursor: pointer;
+}
+
+#nav-menu
+{
+    left: 50px;
+}
+

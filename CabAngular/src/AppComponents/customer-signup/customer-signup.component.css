@@ -1,0 +1,43 @@
+.background-radial-gradient {
+  background-image: url("../../assets/CustomerSignup.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+  .card bg-glass{
+    opacity: 0.9;
+    width: 500px;
+    height: 474px;
+      position: relative;
+      margin: 8% auto;
+     
+      padding: 2rem;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      opacity: 0.9;
+      left: -6px;
+  }
+
+  .card-body px-4 py-5 px-md-5{
+    background: transparent;
+  }
+
+  #btn{
+    top: 430px;
+    left: 150px;
+    position: absolute;
+    width: 200px;
+    height: 8%;
+    background: linear-gradient(to right, #fc4a1a, #f7b733);
+    border-radius: 8px;
+    transition: 0.5s;
+    border: none;
+  }
+
+  .error{
+    font-style: italic;
+    color: red;
+    font-size: 15px;
+  }

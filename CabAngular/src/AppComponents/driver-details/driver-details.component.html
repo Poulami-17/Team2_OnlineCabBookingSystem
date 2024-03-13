@@ -1,0 +1,38 @@
+<div class="bg">
+    <div class="box">
+        <h1>Hurrah! Your Driver is on the way. . . . .</h1>
+    </div>
+    <div class="center">
+        <table class="table table-dark table-hover">
+            <tr>
+                <th>Driver Name </th>
+                <th>Driver Photo</th>
+                <th>Phone Number</th>
+            </tr>
+            <tr *ngFor="let driver of driverDetails">
+                <td>{{driver.DriverName}}</td>
+                <td><img [src]="driver.DriverPhoto" height="100p" width="100p" alt="nothing is not found"></td>
+                <td>{{driver.DriverPhoneNumber}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="center">
+        <table class="table table-dark table-hover">
+            <tr>
+                <th>Vehicle Name </th>
+                <th>Vehicle Photo</th>
+                <th>Vehicle Number</th>
+            </tr>
+            <tr *ngFor="let vehicle of vehicleDetails">
+                <td>{{vehicle.vehicleType}}</td>
+                <td><img [src]="vehicle.vehicleImage" height="100p" width="100p" alt="image is not found"></td>
+                <td>{{vehicle.vehicleNumber}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="btn-cancel">
+        <button id="Next-btn" (click)="payment()">Next</button>
+        <button id="cancel-btn" (click)="Cancel()">Cancel Ride</button>
+    </div>
+</div>

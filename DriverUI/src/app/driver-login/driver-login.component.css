@@ -1,0 +1,43 @@
+#login-bg{
+    background-image: url('../../assets/driverLoginbg.jpg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#side-img{
+    height: 92vh;
+    opacity: 0.9;
+}
+
+h1{
+    color: #f7b733;
+    font-size: 45px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    left: 34px;
+    font-weight: bolder;
+    top: 34px;
+}
+
+.error{
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+}
+
+#form-box{
+    width: 400px;
+    height: 450px;
+}
+
+#btn{
+    top: 328px;
+    left: 85px;
+    position: absolute;
+    width: 210px;
+    height: 10%;
+    background: linear-gradient(to right, #fc4a1a, #f7b733);
+    border-radius: 15px;
+    border: none;
+    transition: 0.5s;
+}

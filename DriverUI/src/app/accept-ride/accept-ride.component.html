@@ -1,0 +1,18 @@
+<div class="bg">
+    <div class="center">
+        <table class="table table-dark table-striped">
+            <thead>
+                <th>Pick up Location</th>
+                <th>Drop off Location</th>
+                <th>Accept</th>
+            </thead>
+           <tbody>
+            <tr *ngFor="let rides of rideDetails">
+                <td>{{rides?.pickUpLocation}}</td>
+                <td>{{rides?.dropOffLocation}}</td>
+                <td><Button>Accept</Button></td>
+            </tr>
+           </tbody>
+        </table>
+    </div>
+</div>

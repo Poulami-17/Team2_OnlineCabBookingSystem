@@ -1,0 +1,107 @@
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+
+  </style>
+
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: #f7b733;">
+          VeloCraze <br />
+          <span style="color: hsl(35, 98%, 49%)">A Part of Your Journey</span>
+        </h1>
+        <p class="mb-4 opacity-70" style="color: hsl(48, 97%, 50%);font-size: 20px; font-weight: bolder;">
+          Hop in, Let’s Go – VeloCraze Rides!
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <h1>Create Your Account</h1>
+            <form [formGroup]="CustomerSignup" (ngSubmit)="signup()">
+              <!-- NAme input -->
+              <div class="form-outline mb-4">
+                <input type="Name" id="form3Example3" class="form-control" formControlName="Name"
+                  placeholder="Enter your Name" />
+                <label class="form-label" for="form3Example3"></label>
+                <span *ngIf="CustomerSignup.get('Name')?.invalid &&
+               (CustomerSignup.get('Name')?.dirty ||
+               CustomerSignup.get('Name')?.touched)">
+                  <span class="error" *ngIf="CustomerSignup.get('Name')?.hasError('required')">
+                    Your Good Name is required
+                  </span>
+                  <span class="error" *ngIf="CustomerSignup.get('Name')?.hasError('minlength')">
+                    Name must be at least 3 characters
+                  </span>
+                </span>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="Email" id="form3Example3" class="form-control" formControlName="Email"
+                  placeholder="Enter your Email" />
+                <label class="form-label" for="form3Example3"></label>
+                <span *ngIf="CustomerSignup.get('Email')?.invalid &&
+              (CustomerSignup.get('Email')?.dirty ||
+              CustomerSignup.get('Email')?.touched)">
+
+                  <span class="error" *ngIf="CustomerSignup.get('Email')?.hasError('required')">
+                    Email is required
+                  </span>
+                </span>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="Password" id="form3Example5" class="form-control" formControlName="Password"
+                  placeholder="Enter your Password" />
+                <label class="form-label" for="Password"></label>
+                <span *ngIf="CustomerSignup.get('Password')?.invalid &&
+                (CustomerSignup.get('Password')?.dirty ||
+                CustomerSignup.get('Password')?.touched)">
+                  <!-- error -->
+                  <span class="error" *ngIf="CustomerSignup.get('Password')?.hasError('required')">
+                    Password is required
+                  </span>
+                  <span class="error" *ngIf="CustomerSignup.get('Password')?.hasError('minlength')">
+                    Password must be at least 6 characters
+                  </span>
+                </span>
+              </div>
+
+              <!-- Phone Number input -->
+              <div class="form-outline mb-4">
+                <input type="tel" id="form3Example4" class="form-control" formControlName="Phone"
+                  placeholder="Enter your Phone" />
+                <label class="form-label" for="Phone"></label>
+                <span class="error" *ngIf="CustomerSignup.get('Phone')?.hasError('required')">
+                  Phone number is required
+                </span>
+                <span class="error" *ngIf="CustomerSignup.get('Phone')?.hasError('minlength')">
+                  Phone number must be at least 10 digits
+                </span>
+              </div>
+              <!-- Checkbox -->
+              <!-- <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                <label class="form-check-label" for="form2Example33">
+                  Subscribe to our newsletter
+                </label>
+              </div> -->
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4" id="btn">
+                Sign up
+              </button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

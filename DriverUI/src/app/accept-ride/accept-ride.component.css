@@ -1,0 +1,8 @@
+.bg{
+    background-image: url('../../assets/RideCarBG.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    height: 100vh;
+    width: 100%;
+}

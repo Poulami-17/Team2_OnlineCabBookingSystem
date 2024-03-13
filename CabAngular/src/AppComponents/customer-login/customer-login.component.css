@@ -1,0 +1,54 @@
+#login-bg{
+    background-image: url('../../assets/CustomerLogin.png');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+h1{
+    color: #f7b733;
+    font-size: 23px;
+    border: wheat;
+    top:10px;
+    left: 10px;
+    position: relative;
+    font-weight: bolder;
+}
+/* #form3Example3:focus{
+    color: aliceblue;
+}*/
+ #side-img{
+    height: 90vh;
+} 
+
+/* ::-ms-input-placeholder { 
+    color: #f0a611;
+    font-size: 20px;
+    }
+    
+    ::placeholder {
+    color:#f0a611;
+    font-size: 20px;
+    } */
+
+.error{
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.btn btn-primary btn-block mb-4{
+top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  background: linear-gradient(to right, #fc4a1a, #f7b733);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+

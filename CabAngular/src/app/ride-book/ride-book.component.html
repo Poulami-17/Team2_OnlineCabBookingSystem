@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+ 
+<body>
+    <form [formGroup]="rideBook" class="search-box"> 
+        <div class="box" id="container">
+            <input type="text" formControlName="PickUp" placeholder="Pick up location....">
+        </div>
+ 
+        <div class="box">
+            <input type="text" formControlName="DropUp" placeholder="Drop Off location....">
+        </div>
+ 
+        <div class="box">
+            <input type="text" formControlName="Distance" placeholder="Distance....">/
+        </div>
+ 
+        <div class="box">
+                <select aria-placeholder="Select Your VehicleCategory" id="dropdown" name="VehicleCategoryId" formControlName="VehicleCategoryId">
+                    <option value="" disabled selected> Select Your Vehicle</option>
+                    <option value="1"> Bike</option>
+                    <option value="2"> Auto</option>
+                    <option value="4"> Mini </option>
+                    <option value="5">Sedan</option>
+                    <option value="6"> SUV</option>
+                </select>
+            </div>
+            <div class="box">
+                <button class="button" (click)="Enter()"><span>Enter </span></button>
+            </div>
+    </form>
+</body>
+ 
+</html>

@@ -1,0 +1,84 @@
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start" id="login-bg">
+    <style>
+        .cascading-right {
+            margin-right: -50px;
+        }
+
+        @media (max-width: 991.98px) {
+            .cascading-right {
+                margin-right: 0;
+            }
+        }
+    </style>
+
+    <!-- Jumbotron -->
+    <div class="container py-4">
+        <h1>Work With Us</h1>
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card cascading-right" style="
+                background: hsla(0, 0%, 0%, 0.55);
+                backdrop-filter: blur(30px); opacity: 0.8;
+                ">
+                    <div class="card-body p-5 shadow-5 text-center" id="form-box">
+                        <h2 class="fw-bold mb-5" style="color: rgb(233, 96, 32)">Log In</h2>
+                        <form [formGroup]="DriverLogin" (ngSubmit)="login()" id="login">
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="email"></label>
+                                <input type="email" id="form3Example3" class="form-control" formControlName="email" placeholder="Enter your Email"/>
+                                <span *ngIf="DriverLogin.get('email')?.invalid &&
+    (DriverLogin.get('email')?.dirty ||
+    DriverLogin.get('email')?.touched)">
+
+                                    <span class="error" *ngIf="DriverLogin.get('email')?.hasError('required')">
+                                        Email is required
+                                    </span>
+                                </span>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="password"></label>
+                                <input type="password" id="form3Example4" class="form-control" formControlName="password" placeholder="Enter your password"/>
+                                <span *ngIf="DriverLogin.get('password')?.invalid &&
+                                (DriverLogin.get('password')?.dirty ||
+                                DriverLogin.get('password')?.touched)">
+                                      <!-- error -->
+                                      <span class="error" *ngIf="DriverLogin.get('password')?.hasError('required')">
+                                          Password is required
+                                      </span>
+                                      <span class="error" *ngIf="DriverLogin.get('password')?.hasError('minlength')">
+                                          Password must be at least 6 characters
+                                      </span>
+                                  </span>
+                            </div>
+
+                            <!-- Checkbox -->
+                            <!-- <div class="form-check d-flex justify-content-center mb-4">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33"
+                                    checked />
+                                <label class="form-check-label" for="form2Example33">
+                                    Subscribe to our newsletter
+                                </label>
+                            </div> -->
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4" id="btn">
+                                Log In
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <img src="../../assets/DriverLoginFront.jpg" class="w-100 rounded-4 shadow-4" id="side-img"
+                    alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+</section>

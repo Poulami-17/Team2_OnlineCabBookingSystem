@@ -24,7 +24,6 @@ namespace CabApp.API
         }
 
 
-
         [HttpPost("BookCab")]
         public async Task<IActionResult> BookCab(RideRequest request)
         {

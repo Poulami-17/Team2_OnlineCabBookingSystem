@@ -1,0 +1,150 @@
+  <!-- <div class="form-group">
+  <label for="email"><span style="color:red">*</span>email</label>
+  <input type="text" id="email" name="email" [(ngModel)]="email" required #emailField="ngModel" class="form-control">
+  <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">
+      <div *ngIf="emailField.errors?.['required']" class="alert alert-danger">email is required.</div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="password"><span style="color:red">*</span> Password:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="password" required #passwordField="ngModel" class="form-control">
+  <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)">
+      <div *ngIf="passwordField.errors?.['required']" class="alert alert-danger">Password is required.</div>
+  </div>
+</div>
+<button type="submit">Login</button>   -->
+
+<!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+     
+      <span *ngIf="form.get('email')?.invalid &&
+    (form.get('email')?.dirty ||
+    form.get('email')?.touched)">
+
+          <span class="error" *ngIf="form.get('email')?.hasError('required')">
+              Email is required.
+          </span>
+      </span>
+
+  </div>
+
+  <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" placeholder="Enter your password">
+      <span *ngIf="form.get('password')?.invalid &&
+    (form.get('password')?.dirty ||
+    form.get('password')?.touched)">
+
+          <span class="error" *ngIf="form.get('password')?.hasError('required')">
+              Password is required.
+          </span>
+          <span class="error" *ngIf="form.get('password')?.hasError('minlength')">
+              Password must be at least 6 characters.
+          </span>
+      </span>
+
+  </div>
+
+  <button type="submit" class="btn btn-outline-success">Submit</button>
+
+</form> -->
+
+
+<!-- <button type="submit" [disabled]="!usernameField.valid || !passwordField.valid" (click) = "onSubmit()" class="btn btn-primary">Login </button>  --> 
+
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100" style="margin-left: -250px;">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card text-black" style="border-radius: 1rem;background: transparent;border: 2px solid black;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <h1 style="font-weight: bolder;">Admin Login</h1>
+              <p class="text-white-50 mb-5"></p>
+
+              <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+                <div class="form-group">
+                    <label for="email" style="font-weight: bold;font-size: large;">Email:</label>
+                    <br>
+                    <input type="email" id="email" formControlName="email" placeholder="Enter your email" style="width: 400px;">
+                   
+                <span *ngIf="form.get('email')?.invalid &&
+                  (form.get('email')?.dirty ||
+                  form.get('email')?.touched)">
+              
+                        <span class="error" *ngIf="form.get('email')?.hasError('required')" style="color:black;font-weight: bold;">
+                            Email is required.
+                        </span>
+                    </span>
+              
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="password" style="font-weight: bold;font-size: large;">Password:</label>
+                  <br>
+                  <input type="password" id="password" formControlName="password" placeholder="Enter your password" style="width: 400px;">
+                  <span *ngIf="form.get('password')?.invalid &&
+                (form.get('password')?.dirty ||
+                form.get('password')?.touched)">
+            
+                      <span class="error" *ngIf="form.get('password')?.hasError('required')"style="color: black;font-weight: bold;">
+                          Password is required.
+                      </span>
+                      <span class="error" *ngIf="form.get('password')?.hasError('minlength')"style="color:black;font-weight: bold;">
+                          Password must be at least 6 characters.
+                      </span>
+                  </span>
+            
+              </div>
+            
+          
+            
+           
+            
+             <br>
+
+              <button type="submit" class="btn btn-outline-primary" style="width: 200px;">Login</button>
+            </form>
+
+           
+
+            </div>
+
+           
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+ 
+  
+
+  <!-- <br>
+  <br>
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off" novalidate>
+    <div class="form-group" >
+      <label for="username">username:</label>
+       <em *ngIf="username?.invalid && (username?.touched || mouseoverLogin)">Required</em>  
+       <input (ngModel)="username" name="userName" required id="username" type="text" size="50"  title="enter user name " required />
+    </div>
+    <div class="form-group" >
+      <label for="password">password:</label>
+       <em *ngIf="password?.invalid  && (password?.touched || mouseoverLogin)">Required</em> -->
+       <!-- <input (ngModel)="password" name="password" required id="password" type="password" size="50" title="enter password" required />
+    </div>
+   
+    <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
+      <button type="submit"  class="btn btn-primary">Login</button>
+    </span>
+  </form>  --> 

@@ -1,0 +1,38 @@
+
+ <section style="background-image: url('./.././../assets/02.jpg');background-size: cover; height: 89.5vh;">
+    <div class="container"  >
+       <div class="row">
+         <div class="col-md-12">
+           <div class="card" >
+             <div class="card-header d-flex justify-content-between align-items-center">
+               <h3 class="card-title" style="font-weight: bold;">All Routes:</h3>
+               
+             </div>
+<div class="admin-home">
+    <div class="container">
+        <!-- <div class="top-right-buttons"> -->
+          <button class="backbutton" (click)="goBack()">Back</button>
+        </div>
+      
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">PickUpLocation</th>
+              <th scope="col">Destination</th>
+              <th scope="col">Distance (in km)</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let route of routes">
+              <td>{{ route.ID }}</td>
+              <td>{{ route.PickUpLocation }}</td>
+              <td>{{ route.DropOffLocation }}</td>
+              <td>{{ route.Distance }}</td>
+              <td>{{ route.Amount }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>

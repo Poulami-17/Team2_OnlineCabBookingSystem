@@ -1,0 +1,42 @@
+<!--  -->
+<!-- <div class="container" >
+  <br>
+  <br>
+<div class="delete-driver-container" >
+    <h2 style="font-weight: bolder;">Delete Driver</h2>
+    <div class="driver-details">
+      <strong>License Number:</strong> {{ driver.LicenseNumber }} <br>
+      <strong>Name:</strong> {{ driver.Name }} <br>
+      <strong>Email:</strong> {{ driver.Email }} <br> -->
+      <!-- Add more driver details as needed -->
+    <!-- </div>
+    <button (click)="deleteDriver()">Delete Driver</button>
+  </div>
+  </div> -->
+
+
+
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Confirm Deletion
+          </div>
+          <div class="card-body">
+            <p>Are you sure you want to delete this driver?</p>
+            <!-- Optionally, you can display driver details here -->
+            <p>Driver ID: {{ driverId }}</p>
+  
+            <div class="btn-group" role="group">
+              <!-- Button to confirm deletion -->
+              <button type="button" class="btn btn-danger" (click)="deleteDriver()">Delete</button>
+              <!-- Button to cancel deletion -->
+              <button type="button" class="btn btn-secondary" (click)="cancelDeletion()">Cancel</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

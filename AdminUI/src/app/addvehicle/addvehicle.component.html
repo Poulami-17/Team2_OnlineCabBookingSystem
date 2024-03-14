@@ -1,0 +1,54 @@
+<section style="background-image: url('./.././../assets/02.jpg');background-size: cover; height: 100vh;">
+  <div class="container mt-0">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="card"  style="background-color: transparent;" >
+          <div class="card-header" style="font-size: x-large;font-weight: bold;color: rgb(5, 5, 5);">
+            Add Vehicles
+          </div>
+          <div class="card-body" > 
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
+              
+              <div class="form-group">
+                <label for="VehicleNumber">Vehicle Number</label>
+                <input formControlName="VehicleNumber" required id="VehicleNumber" type="text" title="Enter Vehicle Number" />
+              </div>
+              <div class="form-group">
+                <label for="Brand">Brand</label>
+                <input formControlName="Brand"  id="Brand" type="text" title="Enter Brand" />
+              </div>
+              <div class="form-group">
+                <label for="Color">Color</label>
+                <input formControlName="Color" id="Color" type="text" title="Enter Color" />
+              </div>
+              <div class="form-group">
+                <label for="Type">Type</label>
+                <input formControlName="Type"  id="Type" type="text" title="Enter Type" />
+              </div>
+              <div class="form-group">
+                <label for="Type">Category</label>
+                <input formControlName="Category"  id="Type" type="text" title="Enter Type" />
+              </div>
+              <div class="form-group">
+                <label for="Type">VehicleType</label>
+                <input formControlName="VehicleType"  id="Type" type="text" title="Enter Type" />
+              </div>
+              <div class="form-group">
+                <label for="Photo">Upload Photo</label>
+                <input (change)="updateFile($event)" type="file" id="Photo" accept="image/*" required />
+              </div>
+             <button type="submit" class="btn btn-primary">Add Vehicle</button>
+            </form>
+          
+        
+
+
+
+
+           
+           
+
+
+
+
+ 

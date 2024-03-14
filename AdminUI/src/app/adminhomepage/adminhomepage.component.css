@@ -1,0 +1,105 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 30px;
+  }
+  
+  .profile {
+    align-self: flex-end;
+    color: black;
+    border: none;
+    background-color: rgb(93, 161, 235);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .options button {
+   
+    border: none;
+
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin: 5px; 
+    /* margin-left: 10px; */
+     margin-top: 30px; 
+    margin-right: 100px;
+    background-color: darkcyan;
+    color: aliceblue; 
+    width: 450px;
+    height: 65px;
+    font-size: larger;
+    cursor: pointer;
+   
+    opacity: 0;
+    animation: fadeInFromBottom 1s forwards;
+  }
+  
+  .options button:nth-child(odd) {
+    animation: fadeInFromLeft 1s forwards;
+  }
+  
+  .options button:nth-child(even) {
+    animation: fadeInFromRight 1s forwards;
+  }
+  
+  .options button:hover {
+    background-color: #303b47;
+  }
+  
+  @keyframes fadeInFromBottom {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .container{
+
+    position: relative;
+    max-width: 100%;
+    
+      font-family: Roboto;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(./.././../assets/02.jpg);
+      height: 90vh;
+    
+  }
+ 

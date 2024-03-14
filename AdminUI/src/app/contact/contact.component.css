@@ -1,0 +1,27 @@
+.form-group {
+    margin-bottom: 15px;
+  }
+ 
+  .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+ 
+  .alert-danger {
+    color: red;
+    margin-top: 5px;
+    background-color: transparent;
+    border: none;
+  } 
+
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(./.././../assets/02.jpg);
+    height: 100vh;
+    overflow: hidden;
+  }

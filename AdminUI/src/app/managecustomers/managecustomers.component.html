@@ -1,0 +1,10 @@
+<!-- <div class="container">
+    <button class="btn btn-success" [routerLink]="['/viewcustomers']">view Customers</button>
+</div> -->
+<div class="container">
+<div class="options">
+    <button (click)="showCustomerOptions()"style="width:800px">Manage Customer</button>
+  <div *ngIf="showCustomerOptionsFlag">  
+    <button (click)="viewcustomers()">View Customer</button>
+  </div>
+</div>

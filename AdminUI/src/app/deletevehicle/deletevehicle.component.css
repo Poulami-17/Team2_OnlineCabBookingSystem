@@ -1,0 +1,12 @@
+.container{
+
+    position: relative;
+    max-width: 100%;
+    
+      font-family: Roboto;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(./.././../assets/02.jpg);
+      height: 90vh;
+    
+  }

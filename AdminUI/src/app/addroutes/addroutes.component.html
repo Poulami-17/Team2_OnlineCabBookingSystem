@@ -1,0 +1,59 @@
+
+ <section style="background-image: url('./.././../assets/02.jpg');background-size: cover; height: 130vh;">
+    <div class="container mt-0">
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <div class="card"  style="background-color: transparent;" >
+            <div class="card-header" style="font-size: x-large;font-weight: bold;color: rgb(5, 5, 5);">
+              Add Route
+            </div>
+            <div class="card-body" >
+<form (ngSubmit)="onSubmit()" #routeForm="ngForm">
+  <!-- <div class="form-group">
+    <label for="routeId">Route ID<span class="required">*</span></label>
+    <input type="text" class="form-control" id="routeId" required [(ngModel)]="route.routeId" name="routeId" #routeId="ngModel">
+    <div *ngIf="routeId.invalid && (routeId.dirty || routeId.touched)" class="alert-danger">
+      <div *ngIf="routeId.errors?.['required']">
+        Route ID is required.
+      </div>
+    </div>
+  </div> -->
+  <div class="form-group">
+    <label for="pickupLocation">Pickup Location<span class="required">*</span></label>
+    <input type="text" class="form-control" id="pickupLocation" required [(ngModel)]="route.pickupLocation" name="pickupLocation" #pickupLocation="ngModel">
+    <div *ngIf="pickupLocation.invalid && (pickupLocation.dirty || pickupLocation.touched)" class="alert-danger">
+      <div *ngIf="pickupLocation.errors?.['required']">
+        Pickup Location is required.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="destination">Destination<span class="required">*</span></label>
+    <input type="text" class="form-control" id="destination" required [(ngModel)]="route.destination" name="destination" #destination="ngModel">
+    <div *ngIf="destination.invalid && (destination.dirty || destination.touched)" class="alert-danger">
+      <div *ngIf="destination.errors?.['required']">
+        Destination is required.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="distance">Distance (in km)<span class="required">*</span></label>
+    <input type="text" class="form-control" id="distance" required [(ngModel)]="route.distance" name="distance" #distance="ngModel">
+    <div *ngIf="distance.invalid && (distance.dirty || distance.touched)" class="alert-danger">
+      <div *ngIf="distance.errors?.['required']">
+        Distance is required.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="amount">Amount<span class="required">*</span></label>
+    <input type="text" class="form-control" id="amount" required [(ngModel)]="route.amount" name="amount" #amount="ngModel">
+    <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="alert-danger">
+      <div *ngIf="amount.errors?.['required']">
+        Amount is required.
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="routeForm.invalid">Add Route</button>
+  <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+</form>

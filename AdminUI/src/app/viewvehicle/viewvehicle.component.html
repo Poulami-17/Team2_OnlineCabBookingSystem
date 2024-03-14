@@ -1,0 +1,57 @@
+<!-- <div class="container">
+    <h2>Vehicle Details</h2>
+    <div>
+      <label for="vehicle-id">Enter Vehicle ID:</label>
+      <input type="text" id="vehicle-id" [(ngModel)]="inputId" (keyup.enter)="searchVehicle()">
+    </div>
+    <div *ngIf="vehicle">
+      <p><strong>ID:</strong> {{vehicle.id}}</p>
+      <p><strong>Vehicle Number:</strong> {{vehicle.VehicleNumber}}</p>
+      <p><strong>Brand:</strong> {{vehicle.Brand}}</p>
+      <p><strong>Color:</strong> {{vehicle.Color}}</p>
+      <p><strong>Vehicle Type:</strong> {{vehicle.VehicleType}}</p>
+      <p><strong>Title:</strong> {{vehicle.Title}}</p>
+      <p><strong>Description:</strong> {{vehicle.Description}}</p>
+      <p><strong>Per Km Charge:</strong> {{vehicle.PerKmCharge}}</p>
+ 
+    </div>
+    <button class="back-button" (click)="goBack()">Back</button>
+  </div>
+ -->
+
+  <section style="background-image: url('./.././../assets/02.jpg');background-size: cover; height: 130vh;">
+    <div class="container mt-0">
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <div class="card"  style="background-color: transparent;" >
+            <div class="card-header" style="font-size: x-large;font-weight: bold;color: rgb(5, 5, 5);">
+              Vehicle Details            
+            </div>
+            <div class="card-body" >
+             
+              
+              
+              <div>
+                <label for="vehicle-id" style="margin-left: 50px; font-weight: bolder;">Enter Vehicle ID:</label>
+                <input type="text" id="vehicle-id" [(ngModel)]="inputId" (keyup.enter)="searchVehicle()" style="margin-left: 20px;">
+              </div>
+              <div *ngIf="vehicle">
+                <p><strong>ID:</strong> {{vehicle.id}}</p>
+                <p><strong>Vehicle Number:</strong> {{vehicle.VehicleNumber}}</p>
+                <p><strong>Brand:</strong> {{vehicle.Brand}}</p>
+                <p><strong>Color:</strong> {{vehicle.Color}}</p>
+                <p><strong>Vehicle Type:</strong> {{vehicle.VehicleType}}</p>
+                <p><strong>Title:</strong> {{vehicle.Title}}</p>
+                <p><strong>Description:</strong> {{vehicle.Description}}</p>
+                <p><strong>Per Km Charge:</strong> {{vehicle.PerKmCharge}}</p>
+           
+              </div>
+              <br>
+              <button class="btn btn-danger" (click)="goBack()" style="margin-left: 200px;">Back</button>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>

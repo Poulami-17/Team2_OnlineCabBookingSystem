@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/30079c75-10d8-4ec4-9514-795b2a89788c/resourceGroups/SprintProjectRG/providers/Microsoft.Web/sites/CabAppAdminUI",
+    "appService.deploySubpath": "dist\\online-cab-booking-system\\browser"
+}

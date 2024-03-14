@@ -1,0 +1,36 @@
+.delete-driver-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #070707;
+    border-radius: 5px;
+   
+  }
+ 
+  .driver-details {
+    margin-bottom: 10px;
+  }
+ 
+  button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .container{
+
+    position: relative;
+    max-width: 100%;
+    
+      font-family: Roboto;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(./.././../assets/02.jpg);
+      height: 90vh;
+    
+  }
+
+  .card{
+    margin-top: 30%;
+  }

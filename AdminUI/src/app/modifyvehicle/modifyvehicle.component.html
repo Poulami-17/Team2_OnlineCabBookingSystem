@@ -1,0 +1,36 @@
+<!-- <form (ngSubmit)="updateVehicle()">
+    <label for="vehicleNumber">Vehicle Number:</label>
+    <input [(ngModel)]="vehicle.vehicleNumber" name="vehicleNumber" id="vehicleNumber" type="text" placeholder="Enter Vehicle Number" required />
+    
+ 
+  
+    <button type="submit">Update Vehicle</button>
+  </form>
+   -->
+
+  <section style="background-image: url('./.././../assets/02.jpg');background-size: cover; height: 130vh;">
+    <div class="container mt-0">
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <div class="card"  style="background-color: transparent;" >
+            <div class="card-header" style="font-size: x-large;font-weight: bold;color: rgb(5, 5, 5);">
+              Update Vehicle
+            </div>
+            <div class="card-body" >
+             
+              <form (ngSubmit)="updateVehicle()">
+                <label for="vehicleNumber" style="font-weight: bold;margin-left: 30px;">Vehicle Number:</label>
+                <input [(ngModel)]="vehicle.vehicleNumber" name="vehicleNumber" id="vehicleNumber" type="text" placeholder="Enter Vehicle Number" required  style="margin-left: 20px;"/>
+                
+                <!-- Add other form fields for brand, color, type, etc. -->
+              
+                <button type="submit" class="btn btn-primary " style="margin-left: 50px;width: 200px;">Update Vehicle</button>
+              </form>
+              
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>

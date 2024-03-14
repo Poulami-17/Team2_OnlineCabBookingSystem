@@ -1,0 +1,107 @@
+
+  <section style="background-image: url('./.././../assets/02.jpg');background-size: cover; height: 130vh;">
+  <div class="container mt-0">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="card"  style="background-color: transparent;" >
+          <div class="card-header" style="font-size: x-large;font-weight: bold;color: rgb(5, 5, 5);">
+            Add Driver
+          </div>
+          <div class="card-body" >
+           
+            <form (ngSubmit)="onSubmit()" #driverForm="ngForm">
+    <div class="form-group">
+      <label for="Name">Name</label>
+      <input type="text" class="form-control" id="Name" required [(ngModel)]="driverDetails.Name" name="Name" #Name="ngModel">
+      <div *ngIf="Name.invalid && (Name.dirty || Name.touched)" class="alert-danger">
+        <div *ngIf="Name.errors?.['required']">
+          Name is required.
+        </div>
+      </div>
+    </div>
+   
+    <div class="form-group">
+      <label for="LicenseNumber">LicenseNumber</label>
+      <input type="number" class="form-control" id="LicenseNumber" required [(ngModel)]="driverDetails.LicenseNumber" name="LicenseNumber" #LicenseNumber="ngModel">
+      <div *ngIf="LicenseNumber.invalid && (LicenseNumber.dirty || LicenseNumber.touched)" class="alert-danger">
+        <div *ngIf="LicenseNumber.errors?.['required']">
+          LicenseNumber is required.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="email" class="form-control" id="Email" required [(ngModel)]="driverDetails.Email" name="Email" #Email="ngModel" email>
+      <div *ngIf="Email.invalid && (Email.dirty || Email.touched)" class="alert-danger">
+        <div *ngIf="Email.errors?.['required']">
+          Email is required.
+        </div>
+        <div *ngIf="Email.errors?.['email']">
+          Not a valid Email.
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="PhoneNumber">PhoneNumber</label>
+      <input type="text" class="form-control" id="PhoneNumber" required [(ngModel)]="driverDetails.PhoneNumber" name="PhoneNumber" #PhoneNumber="ngModel">
+      <div *ngIf="PhoneNumber.invalid && (PhoneNumber.dirty || PhoneNumber.touched)" class="alert-danger">
+        <div *ngIf="PhoneNumber.errors?.['required']">
+          PhoneNumber is required.
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="UserName">UserName</label>
+      <input type="text" class="form-control" id="UserName" required [(ngModel)]="driverDetails.UserName" name="UserName" #UserName="ngModel">
+      <div *ngIf="UserName.invalid && (UserName.dirty || UserName.touched)" class="alert-danger">
+        <div *ngIf="UserName.errors?.['required']">
+          UserName is required.
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="Gender">Gender</label>
+      <input type="text" class="form-control" id="Gender" required [(ngModel)]="driverDetails.Gender" name="Gender" #Gender="ngModel">
+      <div *ngIf="Gender.invalid && (Gender.dirty || Gender.touched)" class="alert-danger">
+        <div *ngIf="Gender.errors?.['required']">
+          Gender is required.
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="AadharNumber">AadharNumber</label>
+      <input type="number" class="form-control" id="AadharNumber" required [(ngModel)]="driverDetails.AadharNumber" name="AadharNumber" #AadharNumber="ngModel">
+      <div *ngIf="AadharNumber.invalid && (AadharNumber.dirty || AadharNumber.touched)" class="alert-danger">
+        <div *ngIf="AadharNumber.errors?.['required']">
+          AadharNumber is required.
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="Vehicle">Vehicle</label>
+      <input type="text" class="form-control" id="Vehicle" required [(ngModel)]="driverDetails.Vehicle" name="Vehicle" #Vehicle="ngModel">
+      <div *ngIf="Vehicle.invalid && (Vehicle.dirty || Vehicle.touched)" class="alert-danger">
+        <div *ngIf="Vehicle.errors?.['required']">
+          Vehicle is required.
+        </div>
+      </div>
+    </div>
+
+      <br>
+      <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+            
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  
+   

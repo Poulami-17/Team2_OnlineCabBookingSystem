@@ -1,0 +1,55 @@
+/* .form-group {
+    margin-bottom: 
+  }
+ 
+  
+  .required {
+    color: red; 
+  }
+ 
+ 
+  .alert-danger {
+    color: red; 
+  }
+ 
+  
+  button {
+   
+    background-color:  rgb(93, 161, 235);
+    color: white;
+  }
+  */
+
+
+ 
+ 
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+ 
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+ 
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+     margin-bottom: 20px; 
+    cursor: pointer;
+    margin-left: 150px;
+  }
+
+  .alert-danger {
+    color: red;
+    margin-top: 5px;
+    background-color: transparent;
+    border: none;
+  }  
+  .card{
+    margin-top: 1px;
+  }

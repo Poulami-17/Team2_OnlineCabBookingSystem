@@ -1,0 +1,31 @@
+<div class="container">
+<div class="options">
+    <button (click)="showDriverOptions()"style="width:850px">Manage Drivers</button>
+  <div *ngIf="showDriverOptionsFlag">  
+    <button (click)="adddriver()">Add Driver</button>
+    <button (click)="deletedriver()">Delete Driver</button>
+    <button (click)="modifydriver()">Update Driver</button>
+  </div>
+</div>
+
+
+
+  <!-- <div class="container">
+    <div class="options">
+  <h2>Manage Drivers</h2>
+   <button [routerLink]="['/adddriver']" >Add Driver</button>
+   <button [routerLink]="['/deletedriver']" >Delete Driver</button>
+   <button [routerLink]="['/modifydriver']" >Modify Driver</button>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="container">
+    <div class="options">
+  <h2>Manage Drivers</h2> -->
+   <!-- <button (click)="adddriver">Add Driver</button>
+   <button (click)="adddriver" >Delete Driver</button>
+   <button (click)="adddriver" >Modify Driver</button>
+    </div>
+  </div>
+    -->

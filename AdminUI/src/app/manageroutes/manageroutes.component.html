@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="options">
+        <button (click)="showRoutesOptions()"style="width:850px">Manage Routes</button>
+      <div *ngIf="showRoutesOptionsFlag">  
+        <button (click)="addroutes()">Add Routes</button>
+        <button (click)="deleteroutes()">Delete Routes</button>
+        <button (click)="viewroutes()">view Routes</button>
+      </div>
+    </div>

@@ -1,0 +1,23 @@
+.form-group {
+    margin-bottom: 20px; /* Add space between form fields */
+  }
+  
+  /* Required field indicator */
+  .required {
+    color: red; /* Make the star red */
+  }
+  
+  /* Error messages */
+  .alert-danger {
+    color: red; /* Make error messages red */
+  }
+  
+  /* Add space between buttons */
+  button {
+    margin-right: 10px; /* Add space between buttons */
+    background-color:  rgb(93, 161, 235);
+    color: white;
+  }
+  .card{
+    margin-top: 1px;
+  }

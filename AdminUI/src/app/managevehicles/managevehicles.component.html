@@ -1,0 +1,11 @@
+<div class="container">
+     <div class="options">
+        <button (click)="showVehicleOptions()" style="width:850px">Manage Vehicles</button>
+      <div *ngIf="showVehicleOptionsFlag">  
+        <button (click)="addVehicle()">Add Vehicle</button>
+        <button (click)="viewVehicles()">View Vehicles</button>
+        <button (click)="deleteVehicle()">Delete Vehicle</button>
+        <button (click)="updateVehicle()">Update Vehicle</button>
+      </div>
+     </div>
+   

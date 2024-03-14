@@ -1,0 +1,55 @@
+
+<!-- <div class="cust"></div>
+
+<div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username" required #usernameField="ngModel" class="form-control">
+    <div *ngIf="usernameField.invalid && (usernameField.dirty || usernameField.touched)">
+        <div *ngIf="usernameField.errors?.['required']" class="alert alert-danger">Username is required.</div>
+    </div>
+</div>
+<div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required #passwordField="ngModel" class="form-control">
+    <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)">
+        <div *ngIf="passwordField.errors?.['required']" class="alert alert-danger">Password is required.</div>
+    </div>
+</div>
+<button type="submit" [disabled]="!usernameField.valid || !passwordField.valid" class="btn btn-primary">Login</button> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+          <h1 style="font-weight: bolder;">Customer Login</h1>
+          <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+            <div class="form-group" style="margin-top: 50px;">
+                <label for="username" style="font-weight: bold;font-family: 'Times New Roman', Times, serif;">Username:</label>
+                <input type="text" id="username" name="username" [(ngModel)]="username" required #usernameField="ngModel" class="form-control">
+                <div *ngIf="usernameField.invalid && (usernameField.dirty || usernameField.touched)">
+                    <div *ngIf="usernameField.errors?.['required']" class="alert alert-danger">Username is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" style="font-weight: bold;font-family: 'Times New Roman', Times, serif;">Password:</label>
+                <input type="password" id="password" name="password" [(ngModel)]="password" required #passwordField="ngModel" class="form-control">
+                <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)">
+                    <div *ngIf="passwordField.errors?.['required']" class="alert alert-danger">Password is required.</div>
+                </div>
+            </div>
+              <br>
+            <button type="submit" [disabled]="!usernameField.valid || !passwordField.valid" class="btn btn-primary">Login</button>
+              
+          </form>
+      </div>
+    </div>
+  </body>
+</html>

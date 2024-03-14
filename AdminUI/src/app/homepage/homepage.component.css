@@ -1,0 +1,12 @@
+
+  .achievements{
+  height: 90vh;
+  background-image: url("./.././../assets/01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  position: relative;
+} 
+
+
+ 

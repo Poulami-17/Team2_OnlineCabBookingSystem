@@ -1,0 +1,38 @@
+.required {
+    color: red;
+  }
+  
+  .alert-danger {
+    color: red;
+  }
+  
+  .success-message {
+    color: green;
+    margin-top: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Add space between form fields */
+  }
+
+  button {
+    margin-right: 10px; /* Add space between buttons */
+    background-color:  rgb(93, 161, 235);
+    color: white;
+  }
+  .container{
+
+    position: relative;
+    max-width: 100%;
+    
+      font-family: Roboto;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(./.././../assets/02.jpg);
+      height: 90vh;
+    
+  }
+  
+  .card{
+    margin-top: 10%;
+  }
